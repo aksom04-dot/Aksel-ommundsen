@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// SQLite støtter ikke native enums i Prisma, så disse er dokumentert som
+// String-felt og validert med typede konstanter/zod i src/lib/typer.ts.
+// Rolle: "SENIOR" | "PARORENDE"
+// HjelpeType: "DIGITAL" | "PRAKTISK" | "RING_MEG"
+// ForesporselStatus: "NY" | "TATT" | "FERDIG"
+// Tjeneste: "DIGITAL_HJELP" | "PRAKTISK_HJELP"
+
+model Familie {
+  id        String   @id @default(cuid())
+  navn      String
+  opprettet DateTime @default(now())
+
+  brukere      Bruker[]
+  innstilling  Innstilling?
+  bestillinger Bestilling[]
+}
+
+model Bruker {
+  id        String @id @default(cuid())
+  navn      String
+  rolle     String
+  familieId String
+  familie   Familie @relation(fields: [familieId], references: [id], onDelete: Cascade)
+
+  // Senior: 4-sifret PIN (hashet). Pårørende: e-post + passord (hashet).
+  pinHash     String?
+  epost       String? @unique
+  passordHash String?
+
+  // Om en pårørende har tilgang til å se data for familien (personverninnstilling)
+  harTilgang Boolean @default(true)
+
+  innsjekk            Innsjekk[]
+  medisinBekreftelser MedisinBekreftelse[]
+  hjelpeforesporsler  Hjelpeforesporsel[]
+  samtykke            Samtykke?
+  bestillinger        Bestilling[]
+
+  opprettet DateTime @default(now())
+}
+
+model Innsjekk {
+  id        String   @id @default(cuid())
+  brukerId  String
+  bruker    Bruker   @relation(fields: [brukerId], references: [id], onDelete: Cascade)
+  tidspunkt DateTime @default(now())
+
+  @@index([brukerId, tidspunkt])
+}
+
+model MedisinBekreftelse {
+  id        String   @id @default(cuid())
+  brukerId  String
+  bruker    Bruker   @relation(fields: [brukerId], references: [id], onDelete: Cascade)
+  tidspunkt DateTime @default(now())
+
+  @@index([brukerId, tidspunkt])
+}
+
+model Hjelpeforesporsel {
+  id        String   @id @default(cuid())
+  brukerId  String
+  bruker    Bruker   @relation(fields: [brukerId], references: [id], onDelete: Cascade)
+  type      String
+  status    String   @default("NY")
+  opprettet DateTime @default(now())
+  oppdatert DateTime @updatedAt
+
+  bestilling Bestilling?
+}
+
+model Bestilling {
+  id            String             @id @default(cuid())
+  familieId     String
+  familie       Familie            @relation(fields: [familieId], references: [id], onDelete: Cascade)
+  bestiltAvId   String
+  bestiltAv     Bruker             @relation(fields: [bestiltAvId], references: [id], onDelete: Cascade)
+  foresporselId String?            @unique
+  foresporsel   Hjelpeforesporsel? @relation(fields: [foresporselId], references: [id], onDelete: SetNull)
+  tjeneste      String
+  timeprisOre   Int
+  status        String             @default("NY")
+  opprettet     DateTime           @default(now())
+}
+
+model Samtykke {
+  id               String    @id @default(cuid())
+  brukerId         String    @unique
+  bruker           Bruker    @relation(fields: [brukerId], references: [id], onDelete: Cascade)
+  gitt             Boolean   @default(false)
+  tidspunkt        DateTime  @default(now())
+  trukket          Boolean   @default(false)
+  trukketTidspunkt DateTime?
+}
+
+model Innstilling {
+  id            String  @id @default(cuid())
+  familieId     String  @unique
+  familie       Familie @relation(fields: [familieId], references: [id], onDelete: Cascade)
+  sjekkinnFrist String  @default("11:00") // "HH:MM" i lokal tid
+}

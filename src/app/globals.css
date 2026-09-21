@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --marine-900: #0b1b2b;
+  --marine-700: #0f2a4a;
+}
+
+html,
+body {
+  background-color: #f5f8fc;
+  color: var(--marine-900);
+}
+
+/* Tydelig fokusring for tastatur- og skjermleserbrukere (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid #0f2a4a;
+  outline-offset: 2px;
+}
