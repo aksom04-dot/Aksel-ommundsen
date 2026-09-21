@@ -52,6 +52,7 @@ export default function InnstillingerSkjema({
         </span>
         <input
           type="time"
+          lang="nb-NO"
           value={frist}
           onChange={(e) => setFrist(e.target.value)}
           className="w-40 rounded-xl border-2 border-marine-100 px-4 py-2 text-lg focus:border-marine-700 focus:outline-none"

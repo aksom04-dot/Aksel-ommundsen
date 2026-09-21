@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Trygg Hjemme",
   description: "Enkel trygghet mellom senior og familie",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export const viewport: Viewport = {
