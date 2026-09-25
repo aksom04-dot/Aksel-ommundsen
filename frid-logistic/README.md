@@ -12,9 +12,8 @@ python3 -m http.server 8000
 
 ## Dette må fylles inn før lansering
 
-Søk etter `TODO` i filene. Alt er plassholdere til nå:
+Søk etter `TODO` i filene. Dette er fortsatt plassholdere:
 
-- **Telefonnummer** – `+47 000 00 000` (i `index.html`, flere steder)
 - **E-post** – `post@fridlogistic.no` (i `index.html` og `FALLBACK_EMAIL` i `main.js`)
 - **Bilde av Mikael, teamet eller bilene** – erstatt `.photo-placeholder` i «Om oss»
 - Sjekk at **tjenestene, området (Follo/Oslo)** og løftet om **svar innen neste arbeidsdag** stemmer
