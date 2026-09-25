@@ -181,17 +181,56 @@ main > section { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gut
 .section-head h2, .about h2, .quote h2 { font-size: clamp(2.25rem, 4.6vw, 3.75rem); }
 .section-head p { margin-top: 18px; font-size: 1.1875rem; color: var(--ink-soft); }
 
-/* ---------- Clients ---------- */
-.clients {
-  padding-top: 56px; padding-bottom: 40px;
-  display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+/* ---------- Clients: to kjørefelt med logoer i hver sin retning ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
-.clients h2 { font-size: 1.0625rem; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; }
-.client-logos {
-  list-style: none; margin: 0; padding: 0;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 24px 56px; flex: 1;
+main > section.clients { max-width: 1400px; padding: 56px 16px 24px; }
+.clients-head {
+  max-width: var(--wrap); margin: 0 auto 20px;
+  padding: 0 calc(var(--gutter) - 16px);
 }
-.client-logos img { height: 52px; width: auto; }
+.clients h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.road {
+  position: relative;
+  background: var(--ink);
+  border-radius: var(--r-xl);
+  padding: 22px 0;
+  overflow: hidden;
+  display: grid; gap: 22px;
+}
+.lane {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.lane-track { display: flex; width: max-content; animation: lane-left 38s linear infinite; }
+.lane-in .lane-track { animation-name: lane-right; animation-duration: 46s; }
+.road:hover .lane-track { animation-play-state: paused; }
+.lane-set { display: flex; gap: 20px; padding-right: 20px; }
+.plate {
+  flex: none;
+  display: grid; place-items: center;
+  width: 248px; height: 104px;
+  background: var(--white);
+  border-radius: var(--r-md);
+  padding: 20px 28px;
+}
+.plate img { max-height: 56px; width: auto; }
+.lane-divider {
+  height: 4px;
+  background: repeating-linear-gradient(90deg, var(--sun) 0 36px, transparent 36px 64px);
+  background-size: 64px 4px;
+  animation: dashes 1.2s linear infinite;
+  opacity: .9;
+}
+@keyframes lane-left  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes lane-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@keyframes dashes { to { background-position: -64px 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .lane-track, .lane-divider { animation: none; }
+}
 
 /* ---------- Services ---------- */
 .services { padding-top: 72px; padding-bottom: 96px; }
@@ -393,9 +432,11 @@ main > section.quote { max-width: 1400px; padding: 0 16px 16px; }
   .step-list { grid-template-columns: 1fr; }
   .field-row, .choice { grid-template-columns: 1fr; }
   .facts { grid-template-columns: 1fr 1fr; }
-  .clients { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .client-logos { gap: 20px 32px; }
-  .client-logos img { height: 40px; }
+  main > section.clients { padding: 40px 8px 16px; }
+  .road { border-radius: 24px; padding: 16px 0; gap: 16px; }
+  .plate { width: 176px; height: 76px; padding: 14px 18px; }
+  .plate img { max-height: 40px; }
+  .lane-set { gap: 12px; padding-right: 12px; }
   main > section.quote { padding: 0 8px 8px; }
   .footer-inner { grid-template-columns: 1fr; }
 }
