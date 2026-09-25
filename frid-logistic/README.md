@@ -1,6 +1,6 @@
-# Frid Logistic AS – nettside
+# Frid Logistics AS – nettside
 
-En statisk nettside for Frid Logistic AS i Ski. Ingen byggesteg: `index.html`, `styles.css` og `main.js`.
+En statisk nettside for Frid Logistics AS i Ski. Ingen byggesteg: `index.html`, `styles.css` og `main.js`.
 
 ## Se siden lokalt
 
@@ -16,7 +16,6 @@ Søk etter `TODO` i filene. Alt er plassholdere til nå:
 
 - **Telefonnummer** – `+47 000 00 000` (i `index.html`, flere steder)
 - **E-post** – `post@fridlogistic.no` (i `index.html` og `FALLBACK_EMAIL` i `main.js`)
-- **Adresse** i Ski og **org.nr.** (bunnteksten)
 - **Bilde av Mikael, teamet eller bilene** – erstatt `.photo-placeholder` i «Om oss»
 - Sjekk at **tjenestene, området (Follo/Oslo)** og løftet om **svar innen neste arbeidsdag** stemmer
 - Logoene er klippet ut fra et skjermbilde og er ganske små. Be om originalfilene (SVG/PNG) fra kundene og Frid, og bytt ut filene i `assets/logo/`

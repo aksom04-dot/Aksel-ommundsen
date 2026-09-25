@@ -264,18 +264,15 @@ main > section { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gut
 .days b { font-size: 1rem; color: var(--ink); font-weight: 600; }
 .days .on { border-color: var(--ink); background: var(--ink); color: rgba(255,255,255,.75); }
 .days .on b { color: var(--white); }
-.track {
-  position: relative; padding: 6px 0 6px 22px; color: var(--ink-soft);
+.mock-leg { gap: 0; }
+.leg { display: grid; gap: 2px; padding: 4px 0 4px 22px; position: relative; color: var(--ink-soft); }
+.leg b { color: var(--ink); font-weight: 600; font-size: .875rem; }
+.leg::before {
+  content: ""; position: absolute; left: 2px; top: 8px;
+  width: 10px; height: 10px; border-radius: 50%; border: 2.5px solid var(--ink); background: var(--white);
 }
-.track::before {
-  content: ""; position: absolute; left: 3px; top: 10px;
-  width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--ink-soft); background: var(--white);
-}
-.track + .track::after {
-  content: ""; position: absolute; left: 8px; top: -8px; height: 16px; border-left: 2px solid var(--line);
-}
-.track.done { color: var(--ink); font-weight: 500; }
-.track.done::before { background: var(--green); border-color: var(--green); }
+.leg:last-child::before { background: var(--ink); }
+.leg-line { margin-left: 8px; height: 18px; border-left: 2px dashed #9FB3CB; }
 .mock-done { display: flex; align-items: center; gap: 12px; font-size: .9375rem; }
 .mock-done svg { flex: none; }
 
@@ -294,7 +291,7 @@ main > section { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gut
 }
 .about-text p { margin-top: 20px; max-width: 54ch; font-size: 1.1875rem; color: var(--ink-soft); }
 .about-text p:first-of-type { margin-top: 28px; }
-.facts { margin: 40px 0 0; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 16px 48px; }
+.facts { margin: 40px 0 0; display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 16px 40px; }
 .facts div { border-top: 2px solid var(--ink); padding-top: 12px; }
 .facts dt { font-size: .9375rem; color: var(--ink-soft); }
 .facts dd { margin: 4px 0 0; font-weight: 600; font-size: 1.125rem; }
