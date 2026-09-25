@@ -405,13 +405,55 @@ main > section.quote { max-width: 1400px; padding: 0 16px 16px; }
 .footer a:hover { text-decoration: underline; }
 .footer-brand img { width: 220px; }
 
+/* ---------- Om oss-siden ---------- */
+.about-more { margin-top: 36px; }
+.hero-compact { padding-bottom: 24px; }
+.nav-links a[aria-current="page"] { background: var(--white); color: var(--ink); }
+
+main > section.who {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 32px clamp(32px, 6vw, 96px);
+  padding-top: clamp(56px, 9vw, 120px); padding-bottom: 64px;
+}
+.who-tag { font-size: clamp(1.25rem, 2vw, 1.625rem); line-height: 1.3; max-width: 16ch; color: var(--ink); padding-top: 14px; }
+.who h1 { font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -0.045em; line-height: .95; }
+.who-body p { margin-top: 28px; max-width: 58ch; font-size: 1.1875rem; line-height: 1.75; color: var(--ink-soft); }
+.who-body h1 + p { margin-top: 48px; }
+
+main > section.who-facts { padding-bottom: 96px; }
+.facts-wide { margin: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 40px; }
+
+main > section.who-cta { max-width: 1400px; padding: 0 16px 16px; }
+.who-cta-inner {
+  background: var(--blue); color: var(--white);
+  border-radius: var(--r-xl);
+  padding: clamp(36px, 6vw, 80px) clamp(20px, 5vw, 72px);
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap;
+}
+.who-cta h2 { font-size: clamp(2.25rem, 4.6vw, 3.75rem); max-width: 14ch; }
+.who-cta p { margin-top: 18px; max-width: 44ch; font-size: 1.1875rem; color: rgba(255,255,255,.88); }
+.who-cta-actions { display: grid; gap: 16px; justify-items: start; }
+.who-phone { color: var(--white); text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+  main > section.who { grid-template-columns: 1fr; }
+  .who-tag { padding-top: 0; }
+  .facts-wide { grid-template-columns: 1fr 1fr; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .step-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nav-links a { padding: 10px 14px; }
 }
 @media (max-width: 900px) {
-  .nav-links { display: none; }
+  .nav { flex-wrap: wrap; }
+  .nav-links {
+    order: 3; width: calc(100% + 8px); margin: 4px -4px 0;
+    overflow-x: auto; scrollbar-width: none; padding: 4px;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; padding: 9px 16px; }
   .hero-body { grid-template-columns: 1fr; }
   .route { max-width: 520px; margin: 0 auto; width: 100%; }
   .service-grid, .about, .quote-inner { grid-template-columns: 1fr; }
