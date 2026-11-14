@@ -36,18 +36,19 @@
     const s = sportById[best.sport];
     const naar = best.offset === 0 ? "I dag" : best.offset === 1 ? "I morgen" : DAGER[best.dag - 1];
     $("#heroNext").innerHTML =
-      `<div class="ikon">${s.ikon}</div><div class="big">${esc(s.navn)}</div>` +
-      `<div class="when">${naar} kl. ${esc(best.tid)}</div>`;
+      `<span class="dot"></span>Neste time: <b>${esc(s.navn)}</b> · ${naar.toLowerCase()} kl. ${esc(best.tid.split("–")[0])}`;
   })();
 
   /* ---------- Sporter ---------- */
   $("#sportGrid").innerHTML = D.sporter.map((s) => `
     <button class="sport" data-sport="${s.id}">
-      <span class="ikon" aria-hidden="true">${s.ikon}</span>
-      <h3>${esc(s.navn)}</h3>
-      <span class="niva">${esc(s.niva)}</span>
-      <p>${esc(s.kort)}</p>
-      <span class="more">Les mer →</span>
+      <span class="sport-img"><img src="${esc(s.bilde)}" alt="" loading="lazy"></span>
+      <span class="sport-body">
+        <span class="niva">${esc(s.niva)}</span>
+        <h3>${esc(s.navn)}</h3>
+        <p>${esc(s.kort)}</p>
+        <span class="more">Les mer <span aria-hidden="true">→</span></span>
+      </span>
     </button>`).join("");
 
   const sportDialog = $("#sportDialog");
@@ -59,7 +60,7 @@
       .map((t) => `<span>${DAGER[t.dag - 1].slice(0, 3)} ${esc(t.tid)}</span>`).join("");
     const harDropin = D.timeplan.some((t) => t.sport === s.id && t.dropin);
     $("#sportDialogBody").innerHTML = `
-      <div style="font-size:2.4rem">${s.ikon}</div>
+      <img class="dialog-img" src="${esc(s.bilde)}" alt="">
       <h2>${esc(s.navn)}</h2>
       <p>${esc(s.lang)}</p>
       <dl>
@@ -69,7 +70,7 @@
       </dl>
       <div class="actions">
         ${harDropin ? `<button class="btn btn-ghost" data-open-signup data-type="dropin" data-sport="${s.id}">Book drop-in</button>` : ""}
-        <button class="btn btn-primary" data-open-signup data-type="${s.id === "ungdom" ? "gruppe" : "medlemskap"}" data-sport="${s.id}">Meld meg på</button>
+        <button class="btn btn-primary" data-open-signup data-type="medlemskap" data-sport="${s.id}">Meld meg på</button>
       </div>`;
     sportDialog.showModal();
   });
@@ -259,7 +260,6 @@
   function renderSummary() {
     const d = describe();
     $("#summary").innerHTML = `<b>${esc(d.tittel)}</b><br>${esc(d.detaljer)}`;
-    $("#foresattField").hidden = !(state.type === "gruppe" && state.sport === "ungdom");
   }
 
   function validate(n) {

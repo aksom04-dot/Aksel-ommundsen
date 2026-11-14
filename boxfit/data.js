@@ -1,6 +1,6 @@
 /*
  * ============================================================
- *  BOXFIT SOTRA – ALT INNHOLD SOM SKAL ENDRES LIGGER HER
+ *  SOTRA GYM (BOXFIT) – ALT INNHOLD SOM SKAL ENDRES LIGGER HER
  * ============================================================
  *  Rediger tekst, priser, timeplan og kontaktinfo i denne fila.
  *  Resten av nettsiden oppdaterer seg automatisk.
@@ -13,7 +13,7 @@
 window.BOXFIT = {
   /* ---------- Kontaktinfo ---------- */
   kontakt: {
-    navn: "Boxfit Sotra",
+    navn: "Sotra Gym",
     adresse: "Adresse kommer, 5353 Straume",   // TODO: riktig adresse
     telefon: "+47 000 00 000",                  // TODO
     epost: "post@boxfitsotra.net",              // TODO: riktig e-post
@@ -32,68 +32,53 @@ window.BOXFIT = {
    */
   skjemaAdresse: "",
 
-  /* ---------- Treningstilbud ---------- */
+  /* ---------- Treningstilbud ----------
+   * bilde: bytt gjerne til ekte bilder fra gymmet, f.eks. "bilder/muay-thai.jpg"
+   */
   sporter: [
     {
-      id: "boksing",
-      navn: "Boksing",
-      ikon: "🥊",
-      niva: "Nybegynner – viderekommen",
-      kort: "Teknikk, fotarbeid og kondisjon. Lær grunnslagene trygt med trener.",
-      lang: "Du lærer stilling, fotarbeid, slag og forsvar. Vi trener på sekk, mitts og i par. Ingen sparring uten at du selv ønsker det. Passer for alle som vil komme i form og lære en ekte kampsport.",
-      ta_med: "Treningstøy, innesko eller barbent, drikkeflaske. Hansker kan lånes."
+      id: "boxing",
+      navn: "Boxing Fitness",
+      bilde: "bilder/boxing-fitness.svg",
+      niva: "Alle nivåer",
+      kort: "Høy puls med boksing som grunnlag. Ingen sparring – bare svette.",
+      lang: "Intervalltrening med sekk, mitts, kroppsvekt og kondisjonsøvelser. Du lærer grunnslagene i boksing samtidig som du får god kondisjon. Ingen erfaring nødvendig – du jobber i ditt eget tempo.",
+      ta_med: "Treningstøy, håndkle, drikkeflaske. Hansker kan lånes."
     },
     {
-      id: "kickboksing",
-      navn: "Kickboksing",
-      ikon: "🦵",
+      id: "barbell",
+      navn: "Barbell Complex",
+      bilde: "bilder/barbell.svg",
+      niva: "Alle nivåer",
+      kort: "Styrketrening med vektstang. Teknikk, kraft og fremgang.",
+      lang: "Økter bygget rundt vektstanga: knebøy, markløft, press og olympiske løft satt sammen i komplekser. Treneren hjelper deg med riktig teknikk og passende vekt, så du blir sterkere uke for uke.",
+      ta_med: "Treningstøy, flate sko, drikkeflaske."
+    },
+    {
+      id: "muaythai",
+      navn: "Muay Thai",
+      bilde: "bilder/muay-thai.svg",
       niva: "Nybegynner – viderekommen",
-      kort: "Slag og spark i kombinasjon. Effektiv helkroppstrening.",
-      lang: "Kombinerer boksing med spark og kneteknikker. Gir god kondisjon, styrke og bevegelighet. Treningen tilpasses nivået ditt.",
+      kort: "Thaiboksing med slag, spark, knær og albuer. Effektiv helkroppstrening.",
+      lang: "Muay Thai kalles «de åtte lemmers kunst». Du lærer teknikk på pads og sekk, og trener i par. Sparring er frivillig og kun for de som ønsker det. Gir styrke, kondisjon og selvtillit.",
       ta_med: "Treningstøy, drikkeflaske. Hansker og leggbeskyttere kan lånes."
-    },
-    {
-      id: "boxfit",
-      navn: "Boxfit",
-      ikon: "🔥",
-      niva: "Alle nivåer",
-      kort: "Høy puls med boksing som grunnlag. Ingen kontakt – bare svette.",
-      lang: "Intervalltrening med sekk, mitts, kroppsvekt og kondisjonsøvelser. Ingen kampsporterfaring nødvendig – du jobber i ditt eget tempo.",
-      ta_med: "Treningstøy, håndkle, drikkeflaske."
-    },
-    {
-      id: "styrke",
-      navn: "Styrke & kondisjon",
-      ikon: "💪",
-      niva: "Alle nivåer",
-      kort: "Funksjonell styrke i små grupper med oppfølging.",
-      lang: "Sirkeltrening med kettlebells, frivekter og kroppsvekt. Fokus på riktig teknikk og jevn fremgang.",
-      ta_med: "Treningstøy, innesko, drikkeflaske."
-    },
-    {
-      id: "ungdom",
-      navn: "Ungdom 12–17 år",
-      ikon: "⭐",
-      niva: "12–17 år",
-      kort: "Trygg boksetrening for ungdom med fokus på mestring.",
-      lang: "Vi lærer grunnteknikk, samarbeid og respekt. Treningen er lekbetont og trygg, med fokus på mestring og fellesskap.",
-      ta_med: "Treningstøy, drikkeflaske. Utstyr kan lånes."
     }
   ],
 
   /* ---------- Timeplan (dag 1 = mandag … 7 = søndag) ---------- */
   timeplan: [
-    { dag: 1, tid: "17:00–18:00", sport: "boxfit",      dropin: true  },
-    { dag: 1, tid: "18:15–19:30", sport: "boksing",     dropin: true  },
-    { dag: 2, tid: "17:00–18:00", sport: "ungdom",      dropin: false },
-    { dag: 2, tid: "18:15–19:30", sport: "kickboksing", dropin: true  },
-    { dag: 3, tid: "06:30–07:30", sport: "styrke",      dropin: true  },
-    { dag: 3, tid: "18:15–19:30", sport: "boksing",     dropin: true  },
-    { dag: 4, tid: "17:00–18:00", sport: "ungdom",      dropin: false },
-    { dag: 4, tid: "18:15–19:15", sport: "boxfit",      dropin: true  },
-    { dag: 5, tid: "17:00–18:00", sport: "styrke",      dropin: true  },
-    { dag: 6, tid: "10:00–11:30", sport: "kickboksing", dropin: true  },
-    { dag: 7, tid: "11:00–12:00", sport: "boxfit",      dropin: true  }
+    { dag: 1, tid: "17:00–18:00", sport: "boxing",   dropin: true  },
+    { dag: 1, tid: "18:15–19:30", sport: "muaythai", dropin: true  },
+    { dag: 2, tid: "06:30–07:30", sport: "barbell",  dropin: true  },
+    { dag: 2, tid: "18:15–19:15", sport: "boxing",   dropin: true  },
+    { dag: 3, tid: "17:00–18:00", sport: "barbell",  dropin: true  },
+    { dag: 3, tid: "18:15–19:30", sport: "muaythai", dropin: false },
+    { dag: 4, tid: "17:00–18:00", sport: "boxing",   dropin: true  },
+    { dag: 4, tid: "18:15–19:15", sport: "barbell",  dropin: true  },
+    { dag: 5, tid: "17:00–18:00", sport: "muaythai", dropin: true  },
+    { dag: 6, tid: "10:00–11:00", sport: "boxing",   dropin: true  },
+    { dag: 6, tid: "11:15–12:15", sport: "barbell",  dropin: true  },
+    { dag: 7, tid: "11:00–12:30", sport: "muaythai", dropin: true  }
   ],
 
   /* ---------- Priser ---------- */
@@ -136,16 +121,16 @@ window.BOXFIT = {
       type: "medlemskap"
     },
     {
-      id: "ungdom",
-      navn: "Ungdom",
-      pris: 349,
+      id: "student",
+      navn: "Student",
+      pris: 449,
       enhet: "per måned",
-      punkter: ["12–17 år", "Ungdomsgruppa + åpne timer", "Foresatt signerer"],
-      knapp: "Meld på",
-      type: "gruppe"
+      punkter: ["Alle timer på timeplanen", "Gyldig studentbevis", "6 mnd binding"],
+      knapp: "Bli medlem",
+      type: "medlemskap"
     }
   ],
 
   innmeldingsavgift: "Ingen innmeldingsavgift",
-  prisFotnote: "Student/honnør: 20 % rabatt på månedsmedlemskap. Alle priser inkl. mva."
+  prisFotnote: "Alle priser inkl. mva. Gratis prøvetime for nye medlemmer."
 };

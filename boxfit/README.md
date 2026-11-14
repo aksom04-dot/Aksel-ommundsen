@@ -1,4 +1,4 @@
-# Boxfit Sotra – ny nettside
+# Sotra Gym (Boxfit) – ny nettside
 
 En enkel, rask nettside uten innlogging eller database. Den består av fire filer:
 
@@ -8,7 +8,7 @@ En enkel, rask nettside uten innlogging eller database. Den består av fire file
 | `index.html` | Oppsettet til siden |
 | `styles.css` | Utseende (farger, skrift) |
 | `app.js` | Timeplan, påmelding og drop-in-booking |
-| `logo.svg` | Midlertidig logo – bytt ut med Boxfit sin ekte logo |
+| `bilder/` | Logo og illustrasjoner til de tre treningene |
 
 ## Før siden publiseres
 
@@ -18,7 +18,8 @@ Alt innhold i `data.js` er **eksempler**. Disse må byttes ut med riktige tall f
 - [ ] Hvilke treninger som tilbys og beskrivelsen av dem
 - [ ] Timeplan (dager og klokkeslett)
 - [ ] Priser og medlemskap
-- [ ] Logo (lagre den ekte logoen som `logo.svg` eller `logo.png` og oppdater `index.html`)
+- [ ] **Logo:** `bilder/logo-midlertidig.jpg` er klippet ut av et mobilbilde. Få originalfila (PNG eller SVG) fra gymmet, legg den i `bilder/` og bytt filnavnet i `index.html`. Selve logoen skal ikke endres.
+- [ ] Bilder: illustrasjonene i `bilder/` kan byttes med ekte bilder fra gymmet (endre `bilde:` i `data.js`)
 
 ## Hvordan påmeldinger kommer frem
 

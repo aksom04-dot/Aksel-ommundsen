@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Boxfit Sotra – Boksing, kickboksing og trening på Sotra</title>
-  <meta name="description" content="Boxfit Sotra: boksing, kickboksing, Boxfit og styrketrening for alle nivåer. Bli medlem, book drop-in eller meld deg på en treningsgruppe.">
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <title>Sotra Gym – Boxing Fitness, Barbell Complex og Muay Thai</title>
+  <meta name="description" content="Sotra Gym: Boxing Fitness, Barbell Complex og Muay Thai for alle nivåer. Bli medlem, book drop-in eller meld deg på en treningsgruppe.">
+  <link rel="icon" href="bilder/logo-midlertidig.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a href="#" class="brand" aria-label="Boxfit Sotra – til toppen"><img src="logo.svg" alt="Boxfit Sotra" width="176" height="38"></a>
+    <!-- LOGO: bytt bilder/logo-midlertidig.jpg med originalfila fra Sotra Gym -->
+    <a href="#" class="brand" aria-label="Sotra Gym – til toppen"><img src="bilder/logo-midlertidig.jpg" alt="Sotra Gym"></a>
     <nav class="nav" id="nav" aria-label="Hovedmeny">
       <a href="#trening">Trening</a>
       <a href="#timeplan">Timeplan</a>
       <a href="#priser">Priser</a>
       <a href="#kontakt">Kontakt</a>
-      <button class="btn btn-primary btn-sm" data-open-signup>Bli med</button>
+      <button class="btn btn-primary btn-sm" data-open-signup>Bli medlem</button>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
@@ -33,48 +34,62 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <div>
+      <div class="hero-text">
         <p class="eyebrow">Treningssenter på Sotra</p>
-        <h1>Tren hardt.<br>Bli sterkere.<br><span class="accent">Sammen.</span></h1>
-        <p class="lead">Boksing, kickboksing og kondisjon for alle nivåer – fra første gang til konkurranse. Erfarne trenere, godt miljø og ingen krav om forkunnskaper.</p>
+        <h1>Tren<br>som en<br><span class="accent">fighter.</span></h1>
+        <p class="lead">Boxing Fitness, Barbell Complex og Muay Thai – for alle nivåer. Erfarne trenere, sterkt miljø og ingen krav om forkunnskaper.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" data-open-signup data-type="medlemskap">Bli medlem</button>
           <button class="btn btn-ghost" data-open-signup data-type="dropin">Book drop-in</button>
         </div>
-        <ul class="hero-facts">
-          <li><strong>Gratis</strong> prøvetime</li>
-          <li><strong>Alle</strong> nivåer</li>
-          <li><strong>Lån</strong> av utstyr</li>
-        </ul>
+        <p class="hero-next" id="heroNext"></p>
       </div>
-      <div class="hero-card" aria-hidden="true">
-        <div class="hero-card-label">Neste time</div>
-        <div class="hero-next" id="heroNext"></div>
+      <div class="hero-visual">
+        <img class="hero-img" src="bilder/muay-thai.svg" alt="">
+        <div class="hero-logo">
+          <img src="bilder/logo-midlertidig.jpg" alt="Sotra Gym">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 3 STEG -->
-  <section class="steps wrap" aria-label="Slik kommer du i gang">
-    <div class="step"><span>1</span><div><h3>Velg trening</h3><p>Se hva vi tilbyr og finn noe som passer deg.</p></div></div>
-    <div class="step"><span>2</span><div><h3>Velg medlemskap eller drop-in</h3><p>Fast medlemskap, klippekort eller én enkelt time.</p></div></div>
-    <div class="step"><span>3</span><div><h3>Meld deg på</h3><p>Tar under ett minutt. Vi tar kontakt for bekreftelse.</p></div></div>
-  </section>
+  <!-- TRE TILBUD (bånd) -->
+  <div class="band" aria-hidden="true">
+    <div class="band-track">
+      <span>Boxing Fitness</span><i></i><span>Barbell Complex</span><i></i><span>Muay Thai</span><i></i>
+      <span>Boxing Fitness</span><i></i><span>Barbell Complex</span><i></i><span>Muay Thai</span><i></i>
+    </div>
+  </div>
 
   <!-- TRENING -->
   <section id="trening" class="section">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Treningstilbud</p>
-        <h2>Hva vil du trene?</h2>
-        <p>Trykk på en trening for å lese mer om hva du melder deg på.</p>
+        <h2>Finn din trening</h2>
+        <p>Trykk på en trening for å se hva du melder deg på, hva du skal ta med og når den går.</p>
       </div>
       <div class="sport-grid" id="sportGrid"></div>
     </div>
   </section>
 
+  <!-- SLIK KOMMER DU I GANG -->
+  <section class="section section-grey">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Kom i gang</p>
+        <h2>Tre steg. Ett minutt.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span>01</span><h3>Velg trening</h3><p>Boxing Fitness, Barbell Complex eller Muay Thai.</p></div>
+        <div class="step"><span>02</span><h3>Velg medlemskap</h3><p>Fast medlemskap, klippekort eller én drop-in-time.</p></div>
+        <div class="step"><span>03</span><h3>Meld deg på</h3><p>Fyll inn navn og nummer – vi tar kontakt og bekrefter.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- TIMEPLAN -->
-  <section id="timeplan" class="section section-alt">
+  <section id="timeplan" class="section">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Timeplan</p>
@@ -87,7 +102,7 @@
   </section>
 
   <!-- PRISER -->
-  <section id="priser" class="section">
+  <section id="priser" class="section section-grey">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Priser</p>
@@ -104,8 +119,8 @@
     <div class="wrap contact">
       <div>
         <p class="eyebrow">Kontakt</p>
-        <h2>Kom innom en prøvetime</h2>
-        <p>Usikker på hva som passer? Send oss en melding, så hjelper vi deg å komme i gang.</p>
+        <h2>Første time er gratis.</h2>
+        <p>Usikker på hva som passer? Kom innom en prøvetime eller send oss en melding, så hjelper vi deg i gang.</p>
         <button class="btn btn-primary" data-open-signup data-type="medlemskap">Meld deg på</button>
       </div>
       <ul class="contact-list" id="contactList"></ul>
@@ -115,7 +130,8 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <img src="logo.svg" alt="Boxfit Sotra" width="140" height="30">
+    <img src="bilder/logo-midlertidig.jpg" alt="Sotra Gym">
+    <p class="footer-tag">Boxing Fitness · Barbell Complex · Muay Thai</p>
     <p id="footerText"></p>
   </div>
 </footer>
@@ -132,25 +148,22 @@
   <form id="signupForm" novalidate>
     <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-    <!-- Steg 1 -->
     <fieldset class="stage" data-stage="1">
       <legend id="signupTitle"><span class="stage-no">Steg 1 av 3</span>Hva vil du melde deg på?</legend>
       <div class="choice-grid">
         <label class="choice"><input type="radio" name="type" value="medlemskap"><span><b>Medlemskap</b><small>Tren fast hver uke</small></span></label>
         <label class="choice"><input type="radio" name="type" value="dropin"><span><b>Drop-in</b><small>Én time, ingen binding</small></span></label>
-        <label class="choice"><input type="radio" name="type" value="gruppe"><span><b>Treningsgruppe</b><small>Fast gruppe, f.eks. ungdom</small></span></label>
+        <label class="choice"><input type="radio" name="type" value="gruppe"><span><b>Treningsgruppe</b><small>Fast gruppe med samme trener hver uke</small></span></label>
       </div>
       <p class="error" data-error="1"></p>
     </fieldset>
 
-    <!-- Steg 2 -->
     <fieldset class="stage" data-stage="2" hidden>
       <legend><span class="stage-no">Steg 2 av 3</span><span id="stage2Title">Velg</span></legend>
       <div id="stage2Body"></div>
       <p class="error" data-error="2"></p>
     </fieldset>
 
-    <!-- Steg 3 -->
     <fieldset class="stage" data-stage="3" hidden>
       <legend><span class="stage-no">Steg 3 av 3</span>Dine opplysninger</legend>
       <div class="summary" id="summary"></div>
@@ -158,14 +171,13 @@
         <label>Fullt navn<input name="navn" autocomplete="name" required></label>
         <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
         <label class="full">E-post<input name="epost" type="email" autocomplete="email" required></label>
-        <label class="full" id="foresattField" hidden>Navn på foresatt (under 18 år)<input name="foresatt"></label>
+        <label class="full">Under 18 år? Navn på foresatt<input name="foresatt" placeholder="Valgfritt"></label>
         <label class="full">Melding (valgfritt)<textarea name="melding" rows="2" placeholder="F.eks. skader vi bør vite om, eller spørsmål"></textarea></label>
       </div>
-      <label class="check"><input type="checkbox" name="samtykke" required> Jeg godtar at Boxfit Sotra lagrer opplysningene mine for å behandle påmeldingen.</label>
+      <label class="check"><input type="checkbox" name="samtykke" required> Jeg godtar at Sotra Gym lagrer opplysningene mine for å behandle påmeldingen.</label>
       <p class="error" data-error="3"></p>
     </fieldset>
 
-    <!-- Ferdig -->
     <div class="stage done" data-stage="4" hidden>
       <div class="done-icon">✓</div>
       <h3>Takk for påmeldingen!</h3>
