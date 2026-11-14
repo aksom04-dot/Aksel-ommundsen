@@ -299,3 +299,4 @@ input[aria-invalid="true"] { border-color: #D93025; }
 .note b { color: var(--ink); }
 .addon { background: var(--grey); padding: 12px 14px; border-radius: 12px; color: var(--text); }
 .contact-list .ct { color: #fff; font-weight: 600; }
+.empty.closed { font: 800 .9rem Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); padding: 10px 4px; }

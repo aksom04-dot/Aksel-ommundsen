@@ -16,6 +16,7 @@
   const fra = (m) => (m.priser ? Math.min(...Object.values(m.priser)) : m.pris);
   const dots = (ids) => ids.map((id) => `<i class="dot" style="--c:${G[id].farge}" title="${esc(G[id].navn)}"></i>`).join("");
   // Medlemskapet som passer best for en gruppe (minst mulig pakke som inkluderer gruppen)
+  const tn = (t) => t.tittel || G[t.gruppe].navn;
   const planFor = (gid) => D.medlemskap.filter((m) => m.grupper.includes(gid)).sort((a, b) => a.grupper.length - b.grupper.length)[0];
 
   /* ---------- Meny ---------- */
@@ -58,7 +59,7 @@
   $("#sportGrid").addEventListener("click", (e) => {
     const b = e.target.closest("[data-sport]"); if (!b) return;
     const g = G[b.dataset.sport], plan = planFor(g.id);
-    const tider = D.timeplan.filter((t) => t.gruppe === g.id).map((t) => `<span>${DAGER[t.dag - 1].slice(0, 3)} ${esc(t.tid)}</span>`).join("");
+    const tider = D.timeplan.filter((t) => t.gruppe === g.id).map((t) => `<span>${DAGER[t.dag - 1].slice(0, 3)} ${esc(t.tid)}${t.tittel ? ` · ${esc(t.tittel.replace(/^Thaiboksing /, ""))}` : ""}</span>`).join("");
     const harDropin = D.timeplan.some((t) => t.gruppe === g.id && t.dropin);
     $("#sportDialogBody").innerHTML = `
       <img class="dialog-img" src="${esc(g.bilde)}" alt="">
@@ -81,7 +82,7 @@
   let filter = "alle";
   const filterEl = $("#filter");
   filterEl.innerHTML = `<button class="chip" data-f="alle" aria-pressed="true">Alle</button><button class="chip" data-f="dropin" aria-pressed="false">Kun drop-in</button>` +
-    D.grupper.map((g) => `<button class="chip" data-f="${g.id}" aria-pressed="false" style="--c:${g.farge}"><i class="dot"></i>${esc(g.navn)}</button>`).join("");
+    D.grupper.filter((g) => D.timeplan.some((t) => t.gruppe === g.id)).map((g) => `<button class="chip" data-f="${g.id}" aria-pressed="false" style="--c:${g.farge}"><i class="dot"></i>${esc(g.navn)}</button>`).join("");
   filterEl.addEventListener("click", (e) => {
     const b = e.target.closest(".chip"); if (!b) return;
     filter = b.dataset.f;
@@ -95,10 +96,10 @@
         .filter((t) => filter === "alle" || (filter === "dropin" ? t.dropin : t.gruppe === filter))
         .sort((a, b) => a.tid.localeCompare(b.tid));
       const html = slots.map((t) => `<button class="slot" style="--c:${G[t.gruppe].farge}" data-slot="${D.timeplan.indexOf(t)}">
-          <span class="t">${esc(t.tid)}</span><span class="n">${esc(G[t.gruppe].navn)}</span>
+          <span class="t">${esc(t.tid)}</span><span class="n">${esc(tn(t))}</span>
           ${t.dropin ? `<span class="tag tag-drop">Drop-in</span>` : `<span class="tag tag-grp">Påmelding</span>`}</button>`).join("");
-      return `<div class="day ${dag === idag ? "today" : ""} ${slots.length ? "" : "is-empty"}"><h3>${navn}${dag === idag ? " · i dag" : ""}</h3>
-        <div class="slots">${html || `<div class="empty">Ingen timer</div>`}</div></div>`;
+      return `<div class="day ${dag === idag ? "today" : ""} ${slots.length || (D.stengt || {})[dag] ? "" : "is-empty"}"><h3>${navn}${dag === idag ? " · i dag" : ""}</h3>
+        <div class="slots">${html || `<div class="empty ${(D.stengt || {})[dag] ? "closed" : ""}">${esc((D.stengt || {})[dag] || "Ingen timer")}</div>`}</div></div>`;
     }).join("");
   }
   renderSchedule();
@@ -193,7 +194,7 @@
       if (state.slot == null && state.sport) { const f = slots.find((t) => t.gruppe === state.sport); if (f) state.slot = f.i; }
       body.innerHTML = `<p class="note">Pris: <b>${kr(DROPIN.pris)}</b> per time – betales ved oppmøte.</p>
         <div id="dateWrap"></div><p class="sub">Velg time</p>
-        <div class="choice-grid">${slots.map((t) => radio("slot", t.i, G[t.gruppe].navn, `${DAGER[t.dag - 1]} ${esc(t.tid)}`, "", t.i === state.slot, G[t.gruppe].farge)).join("")}</div>`;
+        <div class="choice-grid">${slots.map((t) => radio("slot", t.i, tn(t), `${DAGER[t.dag - 1]} ${esc(t.tid)}`, "", t.i === state.slot, G[t.gruppe].farge)).join("")}</div>`;
       body.onchange = (e) => { if (e.target.name === "slot") { state.slot = +e.target.value; renderDates(); } };
       renderDates();
       return;
@@ -222,14 +223,14 @@
     const w = $("#dateWrap"); if (!w) return;
     if (state.slot == null) { w.innerHTML = ""; return; }
     const t = D.timeplan[state.slot];
-    w.innerHTML = `<p class="sub">Dato for ${esc(G[t.gruppe].navn)} (${DAGER[t.dag - 1].toLowerCase()} kl. ${esc(t.tid)})</p>
+    w.innerHTML = `<p class="sub">Dato for ${esc(tn(t))} (${DAGER[t.dag - 1].toLowerCase()} kl. ${esc(t.tid)})</p>
       <select name="dato">${nextDates(t.dag).map((d) => `<option value="${iso(d)}">${d.toLocaleDateString("nb-NO", { weekday: "long", day: "numeric", month: "long" })}</option>`).join("")}</select>`;
   }
 
   function describe() {
     if (state.type === "dropin") {
       const t = D.timeplan[state.slot];
-      return { tittel: `Drop-in: ${G[t.gruppe].navn}`, detaljer: `${form.dato.selectedOptions[0].textContent} kl. ${t.tid} · ${kr(DROPIN.pris)}`, barn: false };
+      return { tittel: `Drop-in: ${tn(t)}`, detaljer: `${form.dato.selectedOptions[0].textContent} kl. ${t.tid} · ${kr(DROPIN.pris)}`, barn: false };
     }
     const p = M[state.plan];
     const pris = p.priser ? `${BINDING[state.binding]} · ${kr(p.priser[state.binding])}/mnd` : `${kr(p.pris)}${p.enhet}`;

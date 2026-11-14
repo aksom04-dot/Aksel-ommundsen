@@ -91,24 +91,38 @@ window.BOXFIT = {
   ],
 
   /* ---------- Timeplan (dag 1 = mandag … 7 = søndag) ----------
-   * TODO: EKSEMPEL – bytt til ekte timeplan.
+   * Fra timeplanen på boxfitsotra.net + Øyane Boksing (ADHD Norge).
+   * tittel: valgfritt navn på timen (ellers brukes gruppenavnet).
+   * dropin: true = åpen for drop-in. TODO: sjekk hvilke timer som er åpne for drop-in.
    */
   timeplan: [
-    { dag: 1, tid: "17:00–18:00", gruppe: "barn",     dropin: false },
-    { dag: 1, tid: "18:15–19:15", gruppe: "boxing",   dropin: true  },
-    { dag: 1, tid: "19:30–21:00", gruppe: "muaythai", dropin: true  },
-    { dag: 2, tid: "17:00–18:00", gruppe: "ungdom",   dropin: false },
-    { dag: 2, tid: "18:15–19:15", gruppe: "bootcamp", dropin: true  },
-    { dag: 2, tid: "19:30–20:30", gruppe: "barbell",  dropin: true  },
-    { dag: 3, tid: "17:00–18:00", gruppe: "oyane",    dropin: false },
-    { dag: 3, tid: "18:15–19:15", gruppe: "boxing",   dropin: true  },
-    { dag: 3, tid: "19:30–21:00", gruppe: "muaythai", dropin: true  },
-    { dag: 4, tid: "17:00–18:00", gruppe: "barn",     dropin: false },
-    { dag: 4, tid: "18:15–19:15", gruppe: "barbell",  dropin: true  },
-    { dag: 4, tid: "19:30–20:30", gruppe: "bootcamp", dropin: true  },
-    { dag: 5, tid: "17:00–18:00", gruppe: "ungdom",   dropin: false },
-    { dag: 5, tid: "18:15–19:45", gruppe: "muaythai", dropin: true  }
+    { dag: 1, tid: "16:15–17:00", gruppe: "barbell", dropin: true },
+    { dag: 1, tid: "17:00–18:00", gruppe: "boxing", dropin: true },
+    { dag: 1, tid: "17:00–18:00", gruppe: "oyane", dropin: false },
+    { dag: 1, tid: "18:00–19:15", gruppe: "muaythai", tittel: "Thaiboksing nybegynner", dropin: true },
+    { dag: 1, tid: "19:15–20:30", gruppe: "muaythai", tittel: "Thaiboksing viderekomne", dropin: true },
+    { dag: 2, tid: "17:00–18:00", gruppe: "barn", tittel: "Thaiboksing barneparti", dropin: false },
+    { dag: 2, tid: "18:00–19:15", gruppe: "muaythai", tittel: "Thaiboksing alle nivå", dropin: true },
+    { dag: 2, tid: "19:15–20:15", gruppe: "boxing", dropin: true },
+    { dag: 2, tid: "20:15–21:00", gruppe: "barbell", dropin: true },
+    { dag: 3, tid: "16:15–17:00", gruppe: "barbell", dropin: true },
+    { dag: 3, tid: "17:00–18:00", gruppe: "boxing", dropin: true },
+    { dag: 3, tid: "18:00–19:00", gruppe: "oyane", dropin: false },
+    { dag: 3, tid: "18:00–19:15", gruppe: "muaythai", tittel: "Thaiboksing nybegynner", dropin: true },
+    { dag: 3, tid: "19:00–20:30", gruppe: "muaythai", tittel: "Thaiboksing viderekomne", dropin: true },
+    { dag: 4, tid: "17:00–18:00", gruppe: "barn", tittel: "Thaiboksing barneparti", dropin: false },
+    { dag: 4, tid: "18:00–19:15", gruppe: "muaythai", tittel: "Thaiboksing viderekomne", dropin: true },
+    { dag: 4, tid: "19:15–20:15", gruppe: "boxing", dropin: true },
+    { dag: 4, tid: "20:15–21:00", gruppe: "barbell", dropin: true },
+    { dag: 5, tid: "17:00–18:00", gruppe: "muaythai", tittel: "Thaiboksing nybegynner", dropin: true },
+    { dag: 5, tid: "18:00–19:00", gruppe: "muaythai", tittel: "Thaiboksing sparring", dropin: true },
+    { dag: 5, tid: "19:00–19:45", gruppe: "muaythai", tittel: "Thaiboksing clinching", dropin: true },
+    { dag: 6, tid: "11:00–12:00", gruppe: "boxing", dropin: true },
+    { dag: 6, tid: "12:00–13:00", gruppe: "barbell", dropin: true },
+    { dag: 6, tid: "13:00–14:00", gruppe: "barn", tittel: "Thaiboksing barneparti", dropin: false },
+    { dag: 6, tid: "14:00–15:30", gruppe: "muaythai", tittel: "Thaiboksing alle nivå", dropin: true }
   ],
+  stengt: { 7: "Boks stengt" },
 
   /* ---------- Medlemskap og priser ----------
    * priser: { 12: pris med 12 mnd binding, 6: med 6 mnd, 0: uten binding }
