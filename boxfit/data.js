@@ -1,12 +1,12 @@
 /*
  * ============================================================
- *  SOTRA GYM (BOXFIT) – ALT INNHOLD SOM SKAL ENDRES LIGGER HER
+ *  SOTRA GYM / BOXFIT SOTRA – ALT INNHOLD LIGGER HER
  * ============================================================
  *  Rediger tekst, priser, timeplan og kontaktinfo i denne fila.
  *  Resten av nettsiden oppdaterer seg automatisk.
  *
- *  OBS: Alt under er EKSEMPELINNHOLD. Bytt ut med riktige
- *  opplysninger fra Boxfit før siden publiseres.
+ *  Tekster og priser er hentet fra boxfitsotra.net.
+ *  Det som er merket TODO må fylles inn / sjekkes.
  * ============================================================
  */
 
@@ -14,123 +14,136 @@ window.BOXFIT = {
   /* ---------- Kontaktinfo ---------- */
   kontakt: {
     navn: "Sotra Gym",
-    adresse: "Adresse kommer, 5353 Straume",   // TODO: riktig adresse
-    telefon: "+47 000 00 000",                  // TODO
-    epost: "post@boxfitsotra.net",              // TODO: riktig e-post
-    instagram: "https://www.instagram.com/",    // TODO
-    facebook: "https://www.facebook.com/",      // TODO
-    kart: "https://maps.google.com/?q=Straume+Sotra"
+    adresse: "Straume, like ved Sartor Senter",  // TODO: eksakt gateadresse
+    telefon: "",                                 // TODO: telefonnummer (tomt = skjules)
+    epost: "post@boxfitsotra.net",               // TODO: riktig e-post
+    instagram: "",                               // TODO: lenke (tomt = skjules)
+    facebook: "",                                // TODO: lenke (tomt = skjules)
+    kart: "https://maps.google.com/?q=Sartor+Senter+Straume"
   },
+
+  /* Lenke til eksisterende innlogging / Min side. Tom = knappen skjules. */
+  loggInnUrl: "#",                               // TODO: lim inn lenken til medlemssystemet
 
   /*
    * Hvor påmeldinger sendes.
-   * - La stå tom ("") → påmeldingen åpnes som en ferdig utfylt e-post
-   *   til adressen over.
-   * - Lim inn en Formspree-adresse (gratis, formspree.io), f.eks.
-   *   "https://formspree.io/f/abcdwxyz" → påmeldinger kommer rett i
-   *   innboksen uten at kunden trenger å sende e-post selv.
+   * - Tom ("") → påmeldingen åpnes som en ferdig utfylt e-post.
+   * - Formspree-adresse (gratis, formspree.io), f.eks.
+   *   "https://formspree.io/f/abcdwxyz" → påmeldinger kommer rett i innboksen.
    */
   skjemaAdresse: "",
 
-  /* ---------- Treningstilbud ----------
-   * bilde: bytt gjerne til ekte bilder fra gymmet, f.eks. "bilder/muay-thai.jpg"
+  /* ---------- Gruppetimer ----------
+   * farge: fargekoden gruppen har på HELE siden (timeplan, priser, påmelding).
+   * forBarn: true → påmeldingen ber om navn på foresatt.
    */
-  sporter: [
+  grupper: [
     {
-      id: "boxing",
-      navn: "Boxing Fitness",
-      bilde: "bilder/boxing-fitness.svg",
-      niva: "Alle nivåer",
-      kort: "Høy puls med boksing som grunnlag. Ingen sparring – bare svette.",
-      lang: "Intervalltrening med sekk, mitts, kroppsvekt og kondisjonsøvelser. Du lærer grunnslagene i boksing samtidig som du får god kondisjon. Ingen erfaring nødvendig – du jobber i ditt eget tempo.",
-      ta_med: "Treningstøy, håndkle, drikkeflaske. Hansker kan lånes."
+      id: "boxing", navn: "Boxing Fitness", farge: "#3B8BEB",
+      bilde: "bilder/gruppe-boxing.svg", niva: "Alle nivåer",
+      kort: "Forbedre utholdenhet og styrke samtidig som du lærer grunnleggende bokseteknikker.",
+      lang: "Forbedre utholdenhet og styrke samtidig som du lærer grunnleggende bokseteknikker gjennom våre gode og gøye boksing-inspirerte økter.",
+      ta_med: "Treningstøy, håndkle og drikkeflaske. Hansker kan lånes."
     },
     {
-      id: "barbell",
-      navn: "Barbell Complex",
-      bilde: "bilder/barbell.svg",
-      niva: "Alle nivåer",
-      kort: "Styrketrening med vektstang. Teknikk, kraft og fremgang.",
-      lang: "Økter bygget rundt vektstanga: knebøy, markløft, press og olympiske løft satt sammen i komplekser. Treneren hjelper deg med riktig teknikk og passende vekt, så du blir sterkere uke for uke.",
-      ta_med: "Treningstøy, flate sko, drikkeflaske."
+      id: "bootcamp", navn: "Bootcamp", farge: "#F28C28",
+      bilde: "bilder/gruppe-bootcamp.svg", niva: "Alle nivåer",
+      kort: "Intensiv sirkeltrening som kombinerer styrke og kondisjon.",
+      lang: "Bootcamp er en intensiv sirkeltreningsøkt som kombinerer styrke og kondisjon. Perfekt for å forbedre utholdenhet og styrke samtidig som man har det gøy i en variert og motiverende time.",
+      ta_med: "Treningstøy, innesko og drikkeflaske."
     },
     {
-      id: "muaythai",
-      navn: "Muay Thai",
-      bilde: "bilder/muay-thai.svg",
-      niva: "Nybegynner – viderekommen",
-      kort: "Thaiboksing med slag, spark, knær og albuer. Effektiv helkroppstrening.",
-      lang: "Muay Thai kalles «de åtte lemmers kunst». Du lærer teknikk på pads og sekk, og trener i par. Sparring er frivillig og kun for de som ønsker det. Gir styrke, kondisjon og selvtillit.",
-      ta_med: "Treningstøy, drikkeflaske. Hansker og leggbeskyttere kan lånes."
+      id: "barbell", navn: "Barbell Complex", farge: "#14B8A6",
+      bilde: "bilder/gruppe-barbell.svg", niva: "Alle nivåer",
+      kort: "Flere vektstangøvelser i én sammenhengende rekkefølge.",
+      lang: "Barbell Complex er en effektiv treningsmåte som kombinerer flere vektstangøvelser i en sammenhengende rekkefølge for å forbedre styrke, utholdenhet og teknikk.",
+      ta_med: "Treningstøy, flate sko og drikkeflaske."
+    },
+    {
+      id: "muaythai", navn: "Thaiboksing", farge: "#F5C400",
+      bilde: "bilder/gruppe-muaythai.svg", niva: "Alle nivåer + fight camp",
+      kort: "Muay Thai med erfarne instruktører – for mosjonister og konkurranseutøvere.",
+      lang: "Opplev thaiboksing med våre erfarne instruktører. Øktene er designet for å forbedre fysisk kondisjon, utvikle teknisk ferdighet og mental styrke, alt i et trygt og støttende miljø. Alle er velkomne, enten du ønsker å konkurrere eller bare vil komme i form.",
+      ta_med: "Treningstøy og drikkeflaske. Hansker og leggbeskyttere kan lånes."
+    },
+    {
+      id: "ungdom", navn: "Thaiboksing ungdom", farge: "#8BD346",
+      bilde: "bilder/gruppe-ungdom.svg", niva: "Ungdom", forBarn: true,
+      kort: "Thaiboksing for ungdom – teknikk, form og godt miljø.",
+      lang: "Egen gruppe for ungdom der man lærer thaiboksing fra grunnen av, kommer i god form og blir en del av et trygt og inkluderende miljø.",
+      ta_med: "Treningstøy og drikkeflaske. Utstyr kan lånes."
+    },
+    {
+      id: "barn", navn: "Thaiboksing for barn", farge: "#8B5CF6",
+      bilde: "bilder/gruppe-barn.svg", niva: "6–12 år", forBarn: true,
+      kort: "Lære teknikker, utvikle seg og føle mestring i en trygg atmosfære.",
+      lang: "Thaiboksing for barn 6–12 år. Barna lærer teknikker, utvikler seg og føler mestring i en trygg, motiverende og gøy atmosfære.",
+      ta_med: "Treningstøy og drikkeflaske. Utstyr kan lånes."
+    },
+    {
+      id: "oyane", navn: "Øyane Boksing", farge: "#E5383B",
+      bilde: "bilder/gruppe-oyane.svg", niva: "Barn og ungdom", forBarn: true,
+      kort: "Boksetrening i samarbeid med ADHD Norge Øyane.",
+      lang: "Boksetrening for barn og ungdom i samarbeid med ADHD Norge Øyane. Et trygt sted å få ut energi, lære noe nytt og ha det gøy sammen med andre.",
+      ta_med: "Treningstøy og drikkeflaske. Utstyr kan lånes."
     }
   ],
 
-  /* ---------- Timeplan (dag 1 = mandag … 7 = søndag) ---------- */
+  /* ---------- Timeplan (dag 1 = mandag … 7 = søndag) ----------
+   * TODO: EKSEMPEL – bytt til ekte timeplan.
+   */
   timeplan: [
-    { dag: 1, tid: "17:00–18:00", sport: "boxing",   dropin: true  },
-    { dag: 1, tid: "18:15–19:30", sport: "muaythai", dropin: true  },
-    { dag: 2, tid: "06:30–07:30", sport: "barbell",  dropin: true  },
-    { dag: 2, tid: "18:15–19:15", sport: "boxing",   dropin: true  },
-    { dag: 3, tid: "17:00–18:00", sport: "barbell",  dropin: true  },
-    { dag: 3, tid: "18:15–19:30", sport: "muaythai", dropin: false },
-    { dag: 4, tid: "17:00–18:00", sport: "boxing",   dropin: true  },
-    { dag: 4, tid: "18:15–19:15", sport: "barbell",  dropin: true  },
-    { dag: 5, tid: "17:00–18:00", sport: "muaythai", dropin: true  },
-    { dag: 6, tid: "10:00–11:00", sport: "boxing",   dropin: true  },
-    { dag: 6, tid: "11:15–12:15", sport: "barbell",  dropin: true  },
-    { dag: 7, tid: "11:00–12:30", sport: "muaythai", dropin: true  }
+    { dag: 1, tid: "17:00–18:00", gruppe: "boxing",   dropin: true  },
+    { dag: 1, tid: "18:15–19:30", gruppe: "muaythai", dropin: true  },
+    { dag: 2, tid: "17:00–18:00", gruppe: "barn",     dropin: false },
+    { dag: 2, tid: "18:15–19:15", gruppe: "bootcamp", dropin: true  },
+    { dag: 3, tid: "17:00–18:00", gruppe: "barbell",  dropin: true  },
+    { dag: 3, tid: "18:15–19:30", gruppe: "ungdom",   dropin: false },
+    { dag: 4, tid: "17:00–18:00", gruppe: "oyane",    dropin: false },
+    { dag: 4, tid: "18:15–19:30", gruppe: "muaythai", dropin: true  },
+    { dag: 5, tid: "17:00–18:00", gruppe: "boxing",   dropin: true  },
+    { dag: 6, tid: "10:00–11:00", gruppe: "bootcamp", dropin: true  },
+    { dag: 6, tid: "11:15–12:15", gruppe: "barbell",  dropin: true  },
+    { dag: 7, tid: "11:00–12:30", gruppe: "muaythai", dropin: true  }
   ],
 
-  /* ---------- Priser ---------- */
-  abonnement: [
-    {
-      id: "dropin",
-      navn: "Drop-in",
-      pris: 200,
-      enhet: "per time",
-      punkter: ["Ingen binding", "Prøv hvilken som helst åpen time", "Utstyr kan lånes"],
-      knapp: "Book drop-in",
-      type: "dropin"
-    },
-    {
-      id: "klipp10",
-      navn: "Klippekort 10",
-      pris: 1600,
-      enhet: "10 klipp",
-      punkter: ["Gyldig i 6 måneder", "Alle drop-in-timer", "Spar 400 kr"],
-      knapp: "Kjøp klippekort",
-      type: "medlemskap"
-    },
-    {
-      id: "fri",
-      navn: "Fri trening",
-      pris: 549,
-      enhet: "per måned",
-      punkter: ["Alle timer på timeplanen", "12 mnd binding", "Gratis prøvetime"],
-      knapp: "Bli medlem",
-      type: "medlemskap",
-      anbefalt: true
-    },
-    {
-      id: "fleks",
-      navn: "Fleks",
-      pris: 699,
-      enhet: "per måned",
-      punkter: ["Alle timer på timeplanen", "Ingen binding", "1 mnd oppsigelse"],
-      knapp: "Bli medlem",
-      type: "medlemskap"
-    },
-    {
-      id: "student",
-      navn: "Student",
-      pris: 449,
-      enhet: "per måned",
-      punkter: ["Alle timer på timeplanen", "Gyldig studentbevis", "6 mnd binding"],
-      knapp: "Bli medlem",
-      type: "medlemskap"
-    }
+  /* ---------- Medlemskap og priser ----------
+   * priser: { 12: pris med 12 mnd binding, 6: med 6 mnd, 0: uten binding }
+   * grupper: hvilke gruppetimer medlemskapet gir tilgang til (styrer fargene).
+   * type: "medlemskap" | "gruppe" (barn/ungdom) | "dropin" | "tillegg"
+   */
+  medlemskap: [
+    { id: "alle", navn: "Boxfit – alle timer", type: "medlemskap", populaer: true,
+      grupper: ["boxing", "bootcamp", "barbell", "muaythai"],
+      priser: { 12: 699, 6: 749, 0: 799 } },
+    { id: "fitness", navn: "Boxing Fitness, Bootcamp og Barbell Complex", type: "medlemskap",
+      grupper: ["boxing", "bootcamp", "barbell"],
+      priser: { 12: 599, 6: 649, 0: 699 } },
+    { id: "thai", navn: "Thaiboksing – alle nivå og fight camp", type: "medlemskap",
+      grupper: ["muaythai"],
+      priser: { 12: 599, 6: 649, 0: 699 } },
+    { id: "ungdom", navn: "Thaiboksing ungdom", type: "gruppe",
+      grupper: ["ungdom"],
+      priser: { 12: 499, 6: 549, 0: 599 } },
+    { id: "barn", navn: "Thaiboksing for barn", type: "gruppe",
+      grupper: ["barn"],
+      priser: { 12: 399, 6: 449, 0: 499 } },
+    { id: "oyane", navn: "Øyane Boksing – ADHD Norge", type: "gruppe",
+      grupper: ["oyane"],
+      pris: 200, enhet: "/mnd" },
+    { id: "dropin", navn: "Drop-in", type: "dropin",
+      grupper: [],
+      pris: 199, enhet: "/time" },
+    { id: "sauna", navn: "Strilasauna – tillegg", type: "tillegg",
+      grupper: [],
+      pris: 349, enhet: "/mnd", merknad: "12 mnd binding" }
   ],
 
-  innmeldingsavgift: "Ingen innmeldingsavgift",
-  prisFotnote: "Alle priser inkl. mva. Gratis prøvetime for nye medlemmer."
+  /* ---------- Om oss ---------- */
+  omOss: [
+    "Vi er et engasjert og inkluderende gruppetrenings- og kampsportsenter med et godt treningsmiljø på Sotra, like ved Sartor Senter.",
+    "Sotra Muay Thai har trening for barn, ungdom og voksne. Alle er velkomne – enten du ønsker å konkurrere, eller vil trene for å komme i form og samtidig utvikle deg innen thaiboksing.",
+    "Boxfit tilbyr varierte timer som Boxing Fitness, sirkeltrening som Bootcamp, og Barbell Complex.",
+    "Våre erfarne trenere er dedikert til å hjelpe deg med å nå dine mål. Enten du er nybegynner eller erfaren utøver, har vi timer som tilpasses dine behov."
+  ]
 };

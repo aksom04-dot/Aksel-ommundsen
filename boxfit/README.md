@@ -1,4 +1,4 @@
-# Sotra Gym (Boxfit) – ny nettside
+# Sotra Gym / Boxfit Sotra – ny nettside
 
 En enkel, rask nettside uten innlogging eller database. Den består av fire filer:
 
@@ -12,14 +12,18 @@ En enkel, rask nettside uten innlogging eller database. Den består av fire file
 
 ## Før siden publiseres
 
-Alt innhold i `data.js` er **eksempler**. Disse må byttes ut med riktige tall fra Boxfit:
+Tekster og priser er hentet fra boxfitsotra.net. Dette må fortsatt fylles inn i `data.js`:
 
-- [ ] Adresse, telefon, e-post, Instagram og Facebook
-- [ ] Hvilke treninger som tilbys og beskrivelsen av dem
-- [ ] Timeplan (dager og klokkeslett)
-- [ ] Priser og medlemskap
-- [ ] **Logo:** `bilder/logo-midlertidig.jpg` er klippet ut av et mobilbilde. Få originalfila (PNG eller SVG) fra gymmet, legg den i `bilder/` og bytt filnavnet i `index.html`. Selve logoen skal ikke endres.
-- [ ] Bilder: illustrasjonene i `bilder/` kan byttes med ekte bilder fra gymmet (endre `bilde:` i `data.js`)
+- [ ] **Timeplan** – den som ligger inne nå er et eksempel
+- [ ] Eksakt adresse, telefon, Instagram/Facebook
+- [ ] `loggInnUrl` – lenken til medlemssystemet (knappen «Logg inn»)
+- [ ] Riktig e-postadresse for påmeldinger
+
+## Logo, bilder og farger
+
+- `bilder/logo-hvit.png` (meny) og `bilder/logo-solv.png` (forside/bunn) er laget fra logoen, bare med ny farge. Har gymmet originalfila (PNG/SVG), blir de skarpere om de lages fra den.
+- `bilder/foto-*.jpg` er hentet fra skjermbilder av dagens side. Originalbildene gir bedre kvalitet.
+- Hver gruppe har en fast farge (`farge` i `data.js`): Boxing Fitness blå, Bootcamp oransje, Barbell Complex turkis, Thaiboksing gul, Ungdom lysegrønn, Barn fiolett, Øyane Boksing (ADHD Norge) rød.
 
 ## Hvordan påmeldinger kommer frem
 

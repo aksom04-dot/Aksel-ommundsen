@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sotra Gym – Boxing Fitness, Barbell Complex og Muay Thai</title>
-  <meta name="description" content="Sotra Gym: Boxing Fitness, Barbell Complex og Muay Thai for alle nivåer. Bli medlem, book drop-in eller meld deg på en treningsgruppe.">
-  <link rel="icon" href="bilder/logo-midlertidig.jpg">
+  <title>Sotra Gym – Gruppetrening og kampsport på Straume</title>
+  <meta name="description" content="Sotra Gym / Boxfit Sotra: gruppetrening og kampsport på Straume. Boxing Fitness, Bootcamp, Barbell Complex og thaiboksing for barn, ungdom og voksne.">
+  <link rel="icon" href="bilder/logo-solv.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,13 +15,14 @@
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <!-- LOGO: bytt bilder/logo-midlertidig.jpg med originalfila fra Sotra Gym -->
-    <a href="#" class="brand" aria-label="Sotra Gym – til toppen"><img src="bilder/logo-midlertidig.jpg" alt="Sotra Gym"></a>
+    <a href="#" class="brand" aria-label="Sotra Gym – til toppen"><img src="bilder/logo-hvit.png" alt="Sotra Gym"></a>
     <nav class="nav" id="nav" aria-label="Hovedmeny">
-      <a href="#trening">Trening</a>
+      <a href="#om">Om oss</a>
+      <a href="#trening">Gruppetimer</a>
       <a href="#timeplan">Timeplan</a>
       <a href="#priser">Priser</a>
       <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-login btn-sm" data-login hidden>Logg inn</a>
       <button class="btn btn-primary btn-sm" data-open-signup>Bli medlem</button>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav">
@@ -35,9 +36,9 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-text">
-        <p class="eyebrow">Treningssenter på Sotra</p>
-        <h1>Tren<br>som en<br><span class="accent">fighter.</span></h1>
-        <p class="lead">Boxing Fitness, Barbell Complex og Muay Thai – for alle nivåer. Erfarne trenere, sterkt miljø og ingen krav om forkunnskaper.</p>
+        <p class="eyebrow">Gruppetrening og kampsport på Straume</p>
+        <h1>Prøv<br>noe<br><span class="accent">nytt.</span></h1>
+        <p class="lead">Boxing Fitness, Bootcamp, Barbell Complex og thaiboksing for barn, ungdom og voksne. Første time er gratis.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" data-open-signup data-type="medlemskap">Bli medlem</button>
           <button class="btn btn-ghost" data-open-signup data-type="dropin">Book drop-in</button>
@@ -45,9 +46,9 @@
         <p class="hero-next" id="heroNext"></p>
       </div>
       <div class="hero-visual">
-        <img class="hero-img" src="bilder/muay-thai.svg" alt="">
+        <img class="hero-img" src="bilder/foto-trening.jpg" alt="Thaiboksing-trening hos Sotra Gym">
         <div class="hero-logo">
-          <img src="bilder/logo-midlertidig.jpg" alt="Sotra Gym">
+          <img src="bilder/logo-solv.png" alt="Sotra Gym">
         </div>
       </div>
     </div>
@@ -56,40 +57,53 @@
   <!-- TRE TILBUD (bånd) -->
   <div class="band" aria-hidden="true">
     <div class="band-track">
-      <span>Boxing Fitness</span><i></i><span>Barbell Complex</span><i></i><span>Muay Thai</span><i></i>
-      <span>Boxing Fitness</span><i></i><span>Barbell Complex</span><i></i><span>Muay Thai</span><i></i>
+      <span>Boxing Fitness</span><i style="--c:#3B8BEB"></i><span>Bootcamp</span><i style="--c:#F28C28"></i><span>Barbell Complex</span><i style="--c:#14B8A6"></i><span>Thaiboksing</span><i style="--c:#F5C400"></i><span>Ungdom</span><i style="--c:#8BD346"></i><span>Barn</span><i style="--c:#8B5CF6"></i><span>Øyane Boksing</span><i style="--c:#E5383B"></i>
+      <span>Boxing Fitness</span><i style="--c:#3B8BEB"></i><span>Bootcamp</span><i style="--c:#F28C28"></i><span>Barbell Complex</span><i style="--c:#14B8A6"></i><span>Thaiboksing</span><i style="--c:#F5C400"></i><span>Ungdom</span><i style="--c:#8BD346"></i><span>Barn</span><i style="--c:#8B5CF6"></i><span>Øyane Boksing</span><i style="--c:#E5383B"></i>
     </div>
   </div>
 
-  <!-- TRENING -->
-  <section id="trening" class="section">
+  <!-- OM OSS -->
+  <section id="om" class="section">
+    <div class="wrap about">
+      <img class="about-img" src="bilder/foto-gymmet.jpg" alt="Boksetrening i lokalet til Sotra Gym" loading="lazy">
+      <div>
+        <p class="eyebrow">Om oss</p>
+        <h2>Et inkluderende miljø for alle</h2>
+        <div id="omTekst" class="about-text"></div>
+        <button class="btn btn-ghost" data-open-signup data-type="dropin">Book en gratis prøvetime</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRUPPETIMER -->
+  <section id="trening" class="section section-grey">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Treningstilbud</p>
+        <p class="eyebrow">Gruppetimer</p>
         <h2>Finn din trening</h2>
-        <p>Trykk på en trening for å se hva du melder deg på, hva du skal ta med og når den går.</p>
+        <p>Hver gruppe har sin egen farge – den samme i timeplanen, prislista og påmeldingen. Trykk på en gruppe for å lese mer.</p>
       </div>
       <div class="sport-grid" id="sportGrid"></div>
     </div>
   </section>
 
   <!-- SLIK KOMMER DU I GANG -->
-  <section class="section section-grey">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Kom i gang</p>
         <h2>Tre steg. Ett minutt.</h2>
       </div>
       <div class="steps">
-        <div class="step"><span>01</span><h3>Velg trening</h3><p>Boxing Fitness, Barbell Complex eller Muay Thai.</p></div>
-        <div class="step"><span>02</span><h3>Velg medlemskap</h3><p>Fast medlemskap, klippekort eller én drop-in-time.</p></div>
+        <div class="step"><span>01</span><h3>Velg trening</h3><p>Boxing Fitness, Bootcamp, Barbell Complex eller thaiboksing.</p></div>
+        <div class="step"><span>02</span><h3>Velg medlemskap</h3><p>Med 12 mnd, 6 mnd eller uten binding – eller én drop-in-time.</p></div>
         <div class="step"><span>03</span><h3>Meld deg på</h3><p>Fyll inn navn og nummer – vi tar kontakt og bekrefter.</p></div>
       </div>
     </div>
   </section>
 
   <!-- TIMEPLAN -->
-  <section id="timeplan" class="section">
+  <section id="timeplan" class="section section-grey">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Timeplan</p>
@@ -102,15 +116,14 @@
   </section>
 
   <!-- PRISER -->
-  <section id="priser" class="section section-grey">
+  <section id="priser" class="section">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Priser</p>
-        <h2>Medlemskap og drop-in</h2>
-        <p id="innmeldingsavgift"></p>
+        <h2>Medlemskap</h2>
+        <p>Fargene viser hvilke gruppetimer som er inkludert. Velg 12 mnd binding, 6 mnd binding eller uten binding.</p>
       </div>
       <div class="price-grid" id="priceGrid"></div>
-      <p class="fineprint" id="prisFotnote"></p>
     </div>
   </section>
 
@@ -130,8 +143,8 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <img src="bilder/logo-midlertidig.jpg" alt="Sotra Gym">
-    <p class="footer-tag">Boxing Fitness · Barbell Complex · Muay Thai</p>
+    <img src="bilder/logo-solv.png" alt="Sotra Gym">
+    <p class="footer-tag">Boxfit Sotra · Sotra Muay Thai</p>
     <p id="footerText"></p>
   </div>
 </footer>
@@ -153,7 +166,7 @@
       <div class="choice-grid">
         <label class="choice"><input type="radio" name="type" value="medlemskap"><span><b>Medlemskap</b><small>Tren fast hver uke</small></span></label>
         <label class="choice"><input type="radio" name="type" value="dropin"><span><b>Drop-in</b><small>Én time, ingen binding</small></span></label>
-        <label class="choice"><input type="radio" name="type" value="gruppe"><span><b>Treningsgruppe</b><small>Fast gruppe med samme trener hver uke</small></span></label>
+        <label class="choice"><input type="radio" name="type" value="gruppe"><span><b>Treningsgruppe</b><small>Thaiboksing for barn eller ungdom, Øyane Boksing</small></span></label>
       </div>
       <p class="error" data-error="1"></p>
     </fieldset>
@@ -168,10 +181,10 @@
       <legend><span class="stage-no">Steg 3 av 3</span>Dine opplysninger</legend>
       <div class="summary" id="summary"></div>
       <div class="field-grid">
-        <label>Fullt navn<input name="navn" autocomplete="name" required></label>
+        <label id="navnLabel">Fullt navn<input name="navn" autocomplete="name" required></label>
         <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
         <label class="full">E-post<input name="epost" type="email" autocomplete="email" required></label>
-        <label class="full">Under 18 år? Navn på foresatt<input name="foresatt" placeholder="Valgfritt"></label>
+        <label class="full" id="foresattField" hidden>Navn på foresatt<input name="foresatt" autocomplete="name"></label>
         <label class="full">Melding (valgfritt)<textarea name="melding" rows="2" placeholder="F.eks. skader vi bør vite om, eller spørsmål"></textarea></label>
       </div>
       <label class="check"><input type="checkbox" name="samtykke" required> Jeg godtar at Sotra Gym lagrer opplysningene mine for å behandle påmeldingen.</label>
