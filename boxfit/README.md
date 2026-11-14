@@ -22,8 +22,8 @@ Tekster og priser er hentet fra boxfitsotra.net. Dette må fortsatt fylles inn i
 ## Logo, bilder og farger
 
 - `bilder/logo-hvit.png` (meny) og `bilder/logo-solv.png` (forside/bunn) er laget fra logoen, bare med ny farge. Har gymmet originalfila (PNG/SVG), blir de skarpere om de lages fra den.
-- `bilder/foto-*.jpg` er hentet fra skjermbilder av dagens side. Originalbildene gir bedre kvalitet.
-- Hver gruppe har en fast farge (`farge` i `data.js`): Boxing Fitness blå, Bootcamp oransje, Barbell Complex turkis, Thaiboksing gul, Ungdom lysegrønn, Barn fiolett, Øyane Boksing (ADHD Norge) rød.
+- `bilder/foto-gymmet.jpg` er hentet fra et skjermbilde av dagens side. Originalbildet gir bedre kvalitet.
+- Fargekodene (`farge` i `data.js`) brukes kun i timeplanen og prislista: Boxing Fitness blå, Bootcamp oransje, Barbell Complex turkis, Thaiboksing gul, Ungdom lysegrønn, Barn fiolett, Øyane Boksing (ADHD Norge) rød.
 
 ## Hvordan påmeldinger kommer frem
 

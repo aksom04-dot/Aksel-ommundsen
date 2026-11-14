@@ -2,11 +2,11 @@
   <rect x="70" y="430" width="660" height="6" rx="3" fill="#3A404A"/>
   <g transform="translate(0 -20)">
     <rect x="100" y="316" width="600" height="18" rx="9" fill="#C9D3DE"/>
-    <g fill="#14B8A6">
-      <rect x="168" y="200" width="44" height="250" rx="10"/><rect x="216" y="225" width="36" height="200" rx="10" fill="#109384"/><rect x="256" y="262" width="22" height="126" rx="8" fill="#F2F5F8"/>
-      <rect x="588" y="200" width="44" height="250" rx="10"/><rect x="548" y="225" width="36" height="200" rx="10" fill="#109384"/><rect x="522" y="262" width="22" height="126" rx="8" fill="#F2F5F8"/>
+    <g fill="#8CC2F5">
+      <rect x="168" y="200" width="44" height="250" rx="10"/><rect x="216" y="225" width="36" height="200" rx="10" fill="#6FA9E3"/><rect x="256" y="262" width="22" height="126" rx="8" fill="#F2F5F8"/>
+      <rect x="588" y="200" width="44" height="250" rx="10"/><rect x="548" y="225" width="36" height="200" rx="10" fill="#6FA9E3"/><rect x="522" y="262" width="22" height="126" rx="8" fill="#F2F5F8"/>
     </g>
     <rect x="282" y="308" width="14" height="34" rx="4" fill="#F2F5F8"/><rect x="504" y="308" width="14" height="34" rx="4" fill="#F2F5F8"/>
   </g>
-  <g fill="#14B8A6" opacity=".9"><path d="M330 130h140l-14 18H316z"/><path d="M360 170h80l-14 18h-80z"/></g>
+  <g fill="#8CC2F5" opacity=".9"><path d="M330 130h140l-14 18H316z"/><path d="M360 170h80l-14 18h-80z"/></g>
 </svg>

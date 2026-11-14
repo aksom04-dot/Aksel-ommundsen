@@ -33,7 +33,7 @@
         .find((x) => { const [h, m] = x.tid.split(":").map(Number); return off > 0 || h * 60 + m > mins; });
       if (t) {
         const g = G[t.gruppe], naar = off === 0 ? "i dag" : off === 1 ? "i morgen" : DAGER[dag - 1].toLowerCase();
-        $("#heroNext").innerHTML = `<i class="dot" style="--c:${g.farge}"></i>Neste time: <b>${esc(g.navn)}</b> · ${naar} kl. ${esc(t.tid.split("–")[0])}`;
+        $("#heroNext").innerHTML = `<i class="dot"></i>Neste time: <b>${esc(g.navn)}</b> · ${naar} kl. ${esc(t.tid.split("–")[0])}`;
         return;
       }
     }
@@ -44,7 +44,7 @@
 
   /* ---------- Gruppetimer ---------- */
   $("#sportGrid").innerHTML = D.grupper.map((g) => `
-    <button class="sport" data-sport="${g.id}" style="--c:${g.farge}">
+    <button class="sport" data-sport="${g.id}">
       <span class="sport-img"><img src="${esc(g.bilde)}" alt="" loading="lazy"></span>
       <span class="sport-body">
         <span class="niva">${esc(g.niva)}</span>
@@ -62,7 +62,7 @@
     const harDropin = D.timeplan.some((t) => t.gruppe === g.id && t.dropin);
     $("#sportDialogBody").innerHTML = `
       <img class="dialog-img" src="${esc(g.bilde)}" alt="">
-      <span class="pill" style="--c:${g.farge}">${esc(g.niva)}</span>
+      <span class="pill">${esc(g.niva)}</span>
       <h2>${esc(g.navn)}</h2>
       <p>${esc(g.lang)}</p>
       <dl>
