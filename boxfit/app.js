@@ -132,8 +132,9 @@
   const sosiale = [K.instagram && `<a href="${esc(K.instagram)}" target="_blank" rel="noopener">Instagram</a>`, K.facebook && `<a href="${esc(K.facebook)}" target="_blank" rel="noopener">Facebook</a>`].filter(Boolean).join(" · ");
   $("#contactList").innerHTML =
     rad("📍", "Adresse", `<a href="${esc(K.kart)}" target="_blank" rel="noopener">${esc(K.adresse)}</a>`) +
-    (K.telefon ? rad("📞", "Telefon", `<a href="tel:${esc(K.telefon.replace(/\s/g, ""))}">${esc(K.telefon)}</a>`) : "") +
+    (K.telefon ? rad("📞", "Telefon", `<a href="tel:+47${esc(K.telefon.replace(/\s/g, ""))}">${esc(K.telefon)}</a>`) : "") +
     rad("✉️", "E-post", `<a href="mailto:${esc(K.epost)}">${esc(K.epost)}</a>`) +
+    (K.apningstider ? rad("🕓", "Åpningstider", `<span class="ct">${esc(K.apningstider)}</span>`) : "") +
     (sosiale ? rad("📱", "Følg oss", sosiale) : "");
   $("#footerText").textContent = `© ${new Date().getFullYear()} ${K.navn} · ${K.adresse}`;
 

@@ -15,9 +15,9 @@ En enkel, rask nettside uten innlogging eller database. Den består av fire file
 Tekster og priser er hentet fra boxfitsotra.net. Dette må fortsatt fylles inn i `data.js`:
 
 - [ ] **Timeplan** – den som ligger inne nå er et eksempel
-- [ ] Eksakt adresse, telefon, Instagram/Facebook
+- [ ] Instagram/Facebook-lenker
 - [ ] `loggInnUrl` – lenken til medlemssystemet (knappen «Logg inn»)
-- [ ] Riktig e-postadresse for påmeldinger
+
 
 ## Logo, bilder og farger
 

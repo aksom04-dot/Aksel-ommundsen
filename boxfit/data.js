@@ -14,12 +14,13 @@ window.BOXFIT = {
   /* ---------- Kontaktinfo ---------- */
   kontakt: {
     navn: "Sotra Gym",
-    adresse: "Straume, like ved Sartor Senter",  // TODO: eksakt gateadresse
-    telefon: "",                                 // TODO: telefonnummer (tomt = skjules)
-    epost: "post@boxfitsotra.net",               // TODO: riktig e-post
+    adresse: "Gjertrudvegen 7, 5353 Straume",
+    telefon: "960 17 679",
+    apningstider: "Man–fre 16:30–21:30",
+    epost: "boxfitsotra@gmail.com",
     instagram: "",                               // TODO: lenke (tomt = skjules)
     facebook: "",                                // TODO: lenke (tomt = skjules)
-    kart: "https://maps.google.com/?q=Sartor+Senter+Straume"
+    kart: "https://maps.google.com/?q=Gjertrudvegen+7,+5353+Straume"
   },
 
   /* Lenke til eksisterende innlogging / Min side. Tom = knappen skjules. */
@@ -93,18 +94,20 @@ window.BOXFIT = {
    * TODO: EKSEMPEL – bytt til ekte timeplan.
    */
   timeplan: [
-    { dag: 1, tid: "17:00–18:00", gruppe: "boxing",   dropin: true  },
-    { dag: 1, tid: "18:15–19:30", gruppe: "muaythai", dropin: true  },
-    { dag: 2, tid: "17:00–18:00", gruppe: "barn",     dropin: false },
+    { dag: 1, tid: "17:00–18:00", gruppe: "barn",     dropin: false },
+    { dag: 1, tid: "18:15–19:15", gruppe: "boxing",   dropin: true  },
+    { dag: 1, tid: "19:30–21:00", gruppe: "muaythai", dropin: true  },
+    { dag: 2, tid: "17:00–18:00", gruppe: "ungdom",   dropin: false },
     { dag: 2, tid: "18:15–19:15", gruppe: "bootcamp", dropin: true  },
-    { dag: 3, tid: "17:00–18:00", gruppe: "barbell",  dropin: true  },
-    { dag: 3, tid: "18:15–19:30", gruppe: "ungdom",   dropin: false },
-    { dag: 4, tid: "17:00–18:00", gruppe: "oyane",    dropin: false },
-    { dag: 4, tid: "18:15–19:30", gruppe: "muaythai", dropin: true  },
-    { dag: 5, tid: "17:00–18:00", gruppe: "boxing",   dropin: true  },
-    { dag: 6, tid: "10:00–11:00", gruppe: "bootcamp", dropin: true  },
-    { dag: 6, tid: "11:15–12:15", gruppe: "barbell",  dropin: true  },
-    { dag: 7, tid: "11:00–12:30", gruppe: "muaythai", dropin: true  }
+    { dag: 2, tid: "19:30–20:30", gruppe: "barbell",  dropin: true  },
+    { dag: 3, tid: "17:00–18:00", gruppe: "oyane",    dropin: false },
+    { dag: 3, tid: "18:15–19:15", gruppe: "boxing",   dropin: true  },
+    { dag: 3, tid: "19:30–21:00", gruppe: "muaythai", dropin: true  },
+    { dag: 4, tid: "17:00–18:00", gruppe: "barn",     dropin: false },
+    { dag: 4, tid: "18:15–19:15", gruppe: "barbell",  dropin: true  },
+    { dag: 4, tid: "19:30–20:30", gruppe: "bootcamp", dropin: true  },
+    { dag: 5, tid: "17:00–18:00", gruppe: "ungdom",   dropin: false },
+    { dag: 5, tid: "18:15–19:45", gruppe: "muaythai", dropin: true  }
   ],
 
   /* ---------- Medlemskap og priser ----------

@@ -298,3 +298,4 @@ input[aria-invalid="true"] { border-color: #D93025; }
 .note { color: var(--muted); margin-top: -8px; }
 .note b { color: var(--ink); }
 .addon { background: var(--grey); padding: 12px 14px; border-radius: 12px; color: var(--text); }
+.contact-list .ct { color: #fff; font-weight: 600; }
