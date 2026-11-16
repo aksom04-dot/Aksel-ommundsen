@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1C1F24"/>
+  <g fill="#23272E"><path d="M520 0h120L340 600H220z"/><path d="M700 0h60L460 600h-60z"/><path d="M0 420L160 0h50L50 600H0z"/></g>
+  <!-- gulv + skygge -->
+  <rect x="70" y="528" width="660" height="6" rx="3" fill="#3A404A"/>
+  <ellipse cx="318" cy="530" rx="70" ry="8" fill="#000" opacity=".35"/>
+  <!-- bevegelsesbue for sparket -->
+  <path d="M430 440C480 320 580 235 690 180" stroke="#8CC2F5" stroke-width="46" stroke-linecap="round" fill="none" opacity=".07"/>
+  <path d="M420 430C470 320 570 245 680 205" stroke="#8CC2F5" stroke-width="6" stroke-linecap="round" fill="none" opacity=".35" stroke-dasharray="2 18"/>
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- bakre arm (svinger bak for balanse) -->
+    <path d="M276 206L222 246L186 296" stroke="#5E95CF" stroke-width="26"/>
+    <!-- standbein -->
+    <path d="M336 322L314 424L304 506" stroke="#6FA9E3" stroke-width="40"/>
+    <path d="M300 510H344" stroke="#6FA9E3" stroke-width="20"/>
+    <!-- sparkebein: lår + legg -->
+    <path d="M352 316L478 262" stroke="#8CC2F5" stroke-width="48"/>
+    <path d="M478 262L628 196" stroke="#8CC2F5" stroke-width="36"/>
+    <path d="M622 199L676 178" stroke="#8CC2F5" stroke-width="22"/>
+  </g>
+  <path d="M372 296L470 254M486 248L610 194" stroke="#fff" stroke-opacity=".35" stroke-width="8" stroke-linecap="round"/>
+  <!-- ankelbånd -->
+  <path d="M600 192l24-10 12 26-24 10z" fill="#F2F5F8"/>
+  <!-- nakke -->
+  <path d="M282 170L300 192" stroke="#6FA9E3" stroke-width="22" stroke-linecap="round"/>
+  <!-- overkropp, lent bakover -->
+  <path d="M262 186C276 174 322 176 340 190L366 300C350 316 318 318 304 306Z" fill="#8CC2F5"/>
+  <path d="M300 200C312 230 318 262 318 296" stroke="#1C1F24" stroke-opacity=".18" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- thaishorts -->
+  <path d="M300 292L372 284L404 352L356 362L340 330L318 366L288 356Z" fill="#F2F5F8"/>
+  <path d="M300 292L372 284L376 302L302 310Z" fill="#8CC2F5"/>
+  <path d="M352 318l10 22M326 322l-8 24" stroke="#C9D3DE" stroke-width="5" stroke-linecap="round"/>
+  <path d="M386 314L404 352L392 355L374 318Z" fill="#8CC2F5"/>
+  <!-- fremre arm i gard -->
+  <path d="M332 198L370 240L338 168" stroke="#8CC2F5" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- hode + mongkol -->
+  <circle cx="286" cy="146" r="33" fill="#8CC2F5"/>
+  <path d="M254 134C270 122 304 122 318 134" stroke="#F2F5F8" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M256 136C232 140 214 156 196 150" stroke="#F2F5F8" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M254 140C236 152 226 174 206 176" stroke="#F2F5F8" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- hansker -->
+  <circle cx="338" cy="160" r="23" fill="#F2F5F8"/>
+  <circle cx="182" cy="302" r="22" fill="#F2F5F8"/>
+  <path d="M326 150a14 14 0 0 1 22 2" stroke="#8CC2F5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- treffpunkt -->
+  <g fill="#8CC2F5">
+    <path d="M700 150l36-22 6 10-36 22z"/><path d="M708 182h46v12h-46z"/><path d="M700 214l38 18-6 10-38-18z"/>
+  </g>
+  <g fill="#8CC2F5" opacity=".9"><path d="M110 210h90l-14 18h-90z"/><path d="M80 250h60l-14 18H66z"/><path d="M560 430h110l-14 18H546z"/><path d="M600 468h60l-14 18h-60z"/></g>
+</svg>

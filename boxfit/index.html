@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sotra Gym – Gruppetrening og kampsport på Straume</title>
+  <meta name="description" content="Sotra Gym / Boxfit Sotra: gruppetrening og kampsport på Straume. Boxing Fitness, Bootcamp, Barbell Complex og thaiboksing for barn, ungdom og voksne.">
+  <link rel="icon" href="bilder/logo-solv.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#" class="brand" aria-label="Sotra Gym – til toppen"><img src="bilder/logo-hvit.png" alt="Sotra Gym"></a>
+    <nav class="nav" id="nav" aria-label="Hovedmeny">
+      <a href="#om">Om oss</a>
+      <a href="#trening">Gruppetimer</a>
+      <a href="#timeplan">Timeplan</a>
+      <a href="#priser">Priser</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-login btn-sm" data-login hidden>Logg inn</a>
+      <button class="btn btn-primary btn-sm" data-open-signup>Bli medlem</button>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Gruppetrening og kampsport på Straume</p>
+        <h1>Prøv<br>noe<br><span class="accent">nytt.</span></h1>
+        <p class="lead">Boxing Fitness, Bootcamp, Barbell Complex og thaiboksing for barn, ungdom og voksne. Første time er gratis.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" data-open-signup data-type="medlemskap">Bli medlem</button>
+          <button class="btn btn-ghost" data-open-signup data-type="dropin">Book drop-in</button>
+        </div>
+        <p class="hero-next" id="heroNext"></p>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-img" src="bilder/gruppe-muaythai.svg" alt="">
+        <div class="hero-logo">
+          <img src="bilder/logo-solv.png" alt="Sotra Gym">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRE TILBUD (bånd) -->
+  <div class="band" aria-hidden="true">
+    <div class="band-track">
+      <span>Boxing Fitness</span><i></i><span>Bootcamp</span><i></i><span>Barbell Complex</span><i></i><span>Thaiboksing</span><i></i><span>Ungdom</span><i></i><span>Barn</span><i></i><span>Øyane Boksing</span><i></i>
+      <span>Boxing Fitness</span><i></i><span>Bootcamp</span><i></i><span>Barbell Complex</span><i></i><span>Thaiboksing</span><i></i><span>Ungdom</span><i></i><span>Barn</span><i></i><span>Øyane Boksing</span><i></i>
+    </div>
+  </div>
+
+  <!-- OM OSS -->
+  <section id="om" class="section">
+    <div class="wrap">
+      <div class="about">
+        <img class="about-img" src="bilder/foto-trening.jpg" alt="Thaiboksing-trening hos Sotra Gym" loading="lazy">
+        <div>
+          <p class="eyebrow">Om oss</p>
+          <h2>Et inkluderende miljø for alle</h2>
+          <div id="omTekst" class="about-text"></div>
+          <blockquote class="quote" id="omSitat"></blockquote>
+          <button class="btn btn-ghost" data-open-signup data-type="dropin">Book en gratis prøvetime</button>
+        </div>
+      </div>
+      <dl class="facts" id="fakta"></dl>
+      <div class="values" id="verdier"></div>
+      <div class="gallery" id="galleri"></div>
+    </div>
+  </section>
+
+  <!-- GRUPPETIMER -->
+  <section id="trening" class="section section-grey">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Gruppetimer</p>
+        <h2>Finn din trening</h2>
+        <p>Trykk på en gruppe for å se hva du melder deg på, hva du skal ta med og når den går.</p>
+      </div>
+      <div class="sport-grid" id="sportGrid"></div>
+    </div>
+  </section>
+
+  <!-- SLIK KOMMER DU I GANG -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Kom i gang</p>
+        <h2>Tre steg. Ett minutt.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span>01</span><h3>Velg trening</h3><p>Boxing Fitness, Bootcamp, Barbell Complex eller thaiboksing.</p></div>
+        <div class="step"><span>02</span><h3>Velg medlemskap</h3><p>Med 12 mnd, 6 mnd eller uten binding – eller én drop-in-time.</p></div>
+        <div class="step"><span>03</span><h3>Meld deg på</h3><p>Fyll inn navn og nummer – vi tar kontakt og bekrefter.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMEPLAN -->
+  <section id="timeplan" class="section section-grey">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Timeplan</p>
+        <h2>Ukens timer</h2>
+        <p>Timer merket <span class="tag tag-drop">Drop-in</span> er åpne for alle. Trykk på en time for å booke.</p>
+      </div>
+      <div class="filter" id="filter" role="group" aria-label="Filtrer timeplan"></div>
+      <div class="schedule" id="schedule"></div>
+    </div>
+  </section>
+
+  <!-- PRISER -->
+  <section id="priser" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Priser</p>
+        <h2>Medlemskap</h2>
+        <p>Fargene viser hvilke gruppetimer som er inkludert. Velg 12 mnd binding, 6 mnd binding eller uten binding.</p>
+      </div>
+      <div class="price-grid" id="priceGrid"></div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="section section-dark">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Kontakt</p>
+        <h2>Første time er gratis.</h2>
+        <p>Usikker på hva som passer? Kom innom en prøvetime eller send oss en melding, så hjelper vi deg i gang.</p>
+        <button class="btn btn-primary" data-open-signup data-type="medlemskap">Meld deg på</button>
+      </div>
+      <ul class="contact-list" id="contactList"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <img src="bilder/logo-solv.png" alt="Sotra Gym">
+    <p class="footer-tag">Boxfit Sotra · Sotra Muay Thai</p>
+    <p id="footerText"></p>
+  </div>
+</footer>
+
+<!-- SPORT-INFO -->
+<dialog id="sportDialog" class="dialog">
+  <button class="dialog-close" data-close aria-label="Lukk">×</button>
+  <div id="sportDialogBody"></div>
+</dialog>
+
+<!-- PÅMELDING -->
+<dialog id="signupDialog" class="dialog dialog-wide" aria-labelledby="signupTitle">
+  <button class="dialog-close" data-close aria-label="Lukk">×</button>
+  <form id="signupForm" novalidate>
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+    <fieldset class="stage" data-stage="1">
+      <legend id="signupTitle"><span class="stage-no">Steg 1 av 3</span>Hva vil du melde deg på?</legend>
+      <div class="choice-grid">
+        <label class="choice"><input type="radio" name="type" value="medlemskap"><span><b>Medlemskap</b><small>Tren fast hver uke</small></span></label>
+        <label class="choice"><input type="radio" name="type" value="dropin"><span><b>Drop-in</b><small>Én time, ingen binding</small></span></label>
+        <label class="choice"><input type="radio" name="type" value="gruppe"><span><b>Treningsgruppe</b><small>Thaiboksing for barn eller ungdom, Øyane Boksing</small></span></label>
+      </div>
+      <p class="error" data-error="1"></p>
+    </fieldset>
+
+    <fieldset class="stage" data-stage="2" hidden>
+      <legend><span class="stage-no">Steg 2 av 3</span><span id="stage2Title">Velg</span></legend>
+      <div id="stage2Body"></div>
+      <p class="error" data-error="2"></p>
+    </fieldset>
+
+    <fieldset class="stage" data-stage="3" hidden>
+      <legend><span class="stage-no">Steg 3 av 3</span>Dine opplysninger</legend>
+      <div class="summary" id="summary"></div>
+      <div class="field-grid">
+        <label id="navnLabel">Fullt navn<input name="navn" autocomplete="name" required></label>
+        <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
+        <label class="full">E-post<input name="epost" type="email" autocomplete="email" required></label>
+        <label class="full" id="foresattField" hidden>Navn på foresatt<input name="foresatt" autocomplete="name"></label>
+        <label class="full">Melding (valgfritt)<textarea name="melding" rows="2" placeholder="F.eks. skader vi bør vite om, eller spørsmål"></textarea></label>
+      </div>
+      <label class="check"><input type="checkbox" name="samtykke" required> Jeg godtar at Sotra Gym lagrer opplysningene mine for å behandle påmeldingen.</label>
+      <p class="error" data-error="3"></p>
+    </fieldset>
+
+    <div class="stage done" data-stage="4" hidden>
+      <div class="done-icon">✓</div>
+      <h3>Takk for påmeldingen!</h3>
+      <p id="doneText">Vi tar kontakt med deg så snart som mulig for å bekrefte.</p>
+      <button type="button" class="btn btn-primary" data-close>Lukk</button>
+    </div>
+
+    <div class="form-nav" id="formNav">
+      <button type="button" class="btn btn-ghost" id="backBtn">Tilbake</button>
+      <button type="button" class="btn btn-primary" id="nextBtn">Neste</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
