@@ -26,6 +26,22 @@ window.BOXFIT = {
   /* Lenke til eksisterende innlogging / Min side. Tom = knappen skjules. */
   loggInnUrl: "#",                               // TODO: lim inn lenken til medlemssystemet
 
+  /* ---------- Kobling til medlemssystemet / booking-appen ----------
+   * Fyll inn det app-selskapet gir dere. Står et felt tomt, brukes nettsidens egen løsning.
+   *  innmeldingUrl:  lenke til innmelding/kjøp av medlemskap i appen
+   *                  → alle «Bli medlem»/«Meld deg inn»-knapper sender folk dit
+   *  bookingUrl:     lenke til booking av timer/drop-in i appen
+   *                  → «Book drop-in» og trykk på timer i timeplanen sender folk dit
+   *  timeplanEmbed:  lenke til appens timeplan som kan bygges inn (iframe)
+   *                  → vises i stedet for timeplanen på siden, med ledige plasser fra appen
+   */
+  medlemssystem: {
+    navn: "",            // f.eks. navnet på appen
+    innmeldingUrl: "",
+    bookingUrl: "",
+    timeplanEmbed: ""
+  },
+
   /*
    * Hvor påmeldinger sendes.
    * - Tom ("") → påmeldingen åpnes som en ferdig utfylt e-post.

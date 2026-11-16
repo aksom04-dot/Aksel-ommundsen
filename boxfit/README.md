@@ -25,6 +25,18 @@ Tekster og priser er hentet fra boxfitsotra.net. Dette må fortsatt fylles inn i
 - `bilder/foto-*.jpg` er hentet fra skjermbilder av dagens side. Originalbildene gir bedre kvalitet – bytt dem i `galleri` i `data.js`.
 - Fargekodene (`farge` i `data.js`) brukes kun i timeplanen og prislista: Boxing Fitness blå, Bootcamp oransje, Barbell Complex turkis, Thaiboksing gul, Ungdom lysegrønn, Barn fiolett, Øyane Boksing (ADHD Norge) rød.
 
+## Koble til medlemssystemet / booking-appen
+
+Fyll inn `medlemssystem` i `data.js` med det app-selskapet gir dere:
+
+| Felt | Hva skjer |
+|---|---|
+| `innmeldingUrl` | «Bli medlem» og «Meld deg inn» åpner innmeldingen i appen |
+| `bookingUrl` | «Book drop-in» og trykk på timer i timeplanen åpner bookingen i appen |
+| `timeplanEmbed` | Appens egen timeplan (med ledige plasser) vises i stedet for timeplanen på siden |
+
+Står feltene tomme, brukes nettsidens egen påmelding.
+
 ## Hvordan påmeldinger kommer frem
 
 - **Standard:** Når noen melder seg på, åpnes en ferdig utfylt e-post til Boxfit sin adresse. Kunden trykker «Send».

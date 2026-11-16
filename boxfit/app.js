@@ -107,9 +107,15 @@
     }).join("");
   }
   renderSchedule();
-  $("#schedule").addEventListener("click", (e) => {
+  // Appens egen timeplan (hvis lagt inn) erstatter timeplanen på siden
+  if ((D.medlemssystem || {}).timeplanEmbed) {
+    $("#filter").hidden = true;
+    $("#schedule").outerHTML = `<div class="embed"><iframe src="${esc(D.medlemssystem.timeplanEmbed)}" title="Timeplan og booking" loading="lazy"></iframe></div>`;
+  }
+  $("#schedule") && $("#schedule").addEventListener("click", (e) => {
     const b = e.target.closest("[data-slot]"); if (!b) return;
     const t = D.timeplan[+b.dataset.slot];
+    if ((D.medlemssystem || {}).bookingUrl) { window.open(D.medlemssystem.bookingUrl, "_blank", "noopener"); return; }
     if (t.dropin) openSignup("dropin", { slot: +b.dataset.slot });
     else { const p = planFor(t.gruppe); openSignup(p.type, { plan: p.id }); }
   });
@@ -153,6 +159,9 @@
 
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-open-signup]"); if (!b) return;
+    const MS = D.medlemssystem || {};
+    const ekstern = b.dataset.type === "dropin" ? MS.bookingUrl : MS.innmeldingUrl;
+    if (ekstern) { e.preventDefault(); window.open(ekstern, "_blank", "noopener"); return; }
     if (sportDialog.open) sportDialog.close();
     openSignup(b.dataset.type || null, { plan: b.dataset.plan, sport: b.dataset.sport });
   });
