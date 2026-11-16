@@ -162,5 +162,25 @@ window.BOXFIT = {
     "Sotra Muay Thai har trening for barn, ungdom og voksne. Alle er velkomne – enten du ønsker å konkurrere, eller vil trene for å komme i form og samtidig utvikle deg innen thaiboksing.",
     "Boxfit tilbyr varierte timer som Boxing Fitness, sirkeltrening som Bootcamp, og Barbell Complex.",
     "Våre erfarne trenere er dedikert til å hjelpe deg med å nå dine mål. Enten du er nybegynner eller erfaren utøver, har vi timer som tilpasses dine behov."
+  ],
+  omOssSitat: "Velkommen til et sterkt fellesskap og treningsglede på Sotra!",
+  /* Nøkkeltall under Om oss */
+  fakta: [
+    { tall: "2024", tekst: "Etablert på Straume" },
+    { tall: "25", tekst: "Timer i uka" },
+    { tall: "6 år", tekst: "Barn fra 6 år og oppover" },
+    { tall: "0 kr", tekst: "Første prøvetime" }
+  ],
+  /* Hva vi står for */
+  verdier: [
+    { tittel: "For alle nivåer", tekst: "Fra første time til fight camp. Trenerne tilpasser øvelsene til deg, så du kan starte uten erfaring." },
+    { tittel: "Trygt for barn og ungdom", tekst: "Egne partier for barn 6–12 år og ungdom, med fokus på mestring, respekt og glede." },
+    { tittel: "Inkluderende fellesskap", tekst: "Vi samarbeider med ADHD Norge Øyane om boksetrening, og alle skal føle seg velkomne hos oss." },
+    { tittel: "Erfarne trenere", tekst: "Trenerne er dedikert til å hjelpe deg med å nå dine mål, og følger deg opp på hver time." }
+  ],
+  /* Bilder fra gymmet (bytt gjerne til originalbildene) */
+  galleri: [
+    { bilde: "bilder/foto-lokalet.jpg", tekst: "Lokalet på Straume" },
+    { bilde: "bilder/foto-gymmet.jpg", tekst: "Boxing Fitness" }
   ]
 };

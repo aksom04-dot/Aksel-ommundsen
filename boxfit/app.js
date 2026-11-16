@@ -42,6 +42,10 @@
 
   /* ---------- Om oss ---------- */
   $("#omTekst").innerHTML = D.omOss.map((p) => `<p>${esc(p)}</p>`).join("");
+  if ($("#omSitat")) $("#omSitat").textContent = D.omOssSitat || "";
+  if ($("#fakta")) $("#fakta").innerHTML = (D.fakta || []).map((f) => `<div><dt>${esc(f.tall)}</dt><dd>${esc(f.tekst)}</dd></div>`).join("");
+  if ($("#verdier")) $("#verdier").innerHTML = (D.verdier || []).map((v) => `<div class="value"><h3>${esc(v.tittel)}</h3><p>${esc(v.tekst)}</p></div>`).join("");
+  if ($("#galleri")) $("#galleri").innerHTML = (D.galleri || []).map((g) => `<figure><img src="${esc(g.bilde)}" alt="${esc(g.tekst)}" loading="lazy"><figcaption>${esc(g.tekst)}</figcaption></figure>`).join("");
 
   /* ---------- Gruppetimer ---------- */
   $("#sportGrid").innerHTML = D.grupper.map((g) => `
